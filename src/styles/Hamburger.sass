@@ -1,0 +1,26 @@
+button
+	padding: 16px 8px
+	border: none
+	background: none
+
+.hamburger
+	display: block
+	position: relative
+
+.hamburger,
+.hamburger::before,
+.hamburger::after
+	border-radius: 1px
+	width: 16px
+	height: 3px
+	background: #fff
+
+.hamburger::before,
+.hamburger::after
+	content: ''
+	position: absolute
+	left: 0
+.hamburger::before
+	bottom: 6px
+.hamburger::after
+	top: 6px

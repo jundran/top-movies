@@ -1,0 +1,46 @@
+.Footer
+	background: $blue
+	nav
+		width: 860px
+		display: grid
+		grid-template-columns: min-content repeat(4, auto)
+		padding: 80px 0
+		gap: 40px
+	.hero
+		img
+			width: 130px
+			display: block
+			margin-left: auto
+			margin-top: -32px
+		button
+			@extend .flex-centre
+			width: 220px
+			height: 44px
+			font-size: 1.188rem
+			font-weight: 700
+			color: rgb(35, 94, 167)
+			background: #fff
+			border-radius: 5px
+			margin-top: 48px
+	.links
+		color: #fff
+		h3
+			font-size: 1.25rem
+			margin: 0
+		ul
+			line-height: 1.5rem
+		a
+			font-size: 1.0625rem
+
+@media (max-width: 900px)
+	.Footer
+		padding-bottom: 96px
+		nav
+			grid-template-columns: 1fr
+			padding: 0 20px
+			gap: 32px
+		.hero
+			img
+				display: none
+			button
+				margin: 40px 0 16px 0

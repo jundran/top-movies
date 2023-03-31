@@ -1,0 +1,31 @@
+.Trending
+	background-image: url('/trending.svg')
+	background-repeat: no-repeat
+	background-position-y: bottom
+
+.Trailers
+	background: $blue
+	color: #fff
+
+.header
+	display: flex
+	padding: 20px 20px 0 20px
+	h2
+		margin: 0 20px 0 0
+		font-size: 1.5rem
+		font-weight: 600
+
+.cards, .videos
+	display: flex
+	padding: 20px
+	gap: 20px
+	overflow: auto
+
+.videos
+	min-height: 264px
+
+@media (max-width: 600px)
+	.mobile-columns
+		flex-direction: column
+		h2
+			margin-bottom: 8px

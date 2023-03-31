@@ -1,0 +1,41 @@
+$blue: rgb(3, 37, 65)
+$green-light: rgb(192, 254, 207)
+$green-full: rgb(30, 213, 169)
+$green-lg: linear-gradient(to right, $green-light 0%, $green-full 100%)
+
+@import fonts
+@import Header
+@import Toggle
+@import Select
+@import Section
+@import Card
+@import PercentCircle
+@import Trailer
+@import Footer
+@import Hamburger
+
+body
+	margin: 0
+	font-family: 'Source Sans Pro', FreeSans, sans-serif
+
+section, .container
+	max-width: 1300px
+	margin: auto
+
+button, select
+	cursor: pointer
+	font-family: inherit
+
+ul
+	list-style: none
+	padding: 0
+	margin: 0
+
+a
+	color: currentColor
+	text-decoration: none
+
+.flex-centre
+	display: flex
+	justify-content: center
+	align-items: center

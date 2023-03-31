@@ -1,0 +1,46 @@
+$blue-bg: #181818
+
+.PercentCircle
+	width: 38px
+	height: 38px
+	position: absolute
+	bottom: -16px
+	left: 10px
+
+	.outer-circle
+		width: 100%
+		height: 100%
+		border-radius: 50%
+		background: $blue-bg
+
+	.percent-bar
+		width: 34px
+		height: 34px
+		border-radius: 50%
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		overflow: hidden
+		background: #444
+
+	.portion
+		position: absolute
+		top: 0
+		left: 0
+		width: 50%
+		height: 100%
+		transform-origin: right center
+
+	.inner-circle
+		font-size: .9rem
+		font-weight: 700
+		width: 30px
+		height: 30px
+		background: $blue-bg
+		border-radius: 50%
+		color: #fff
+		z-index: 1
+		span
+			font-size: 40%
+			padding-bottom: 6px

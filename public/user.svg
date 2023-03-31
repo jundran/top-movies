@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--part of the rodentia icon theme by sixsixfive released under CC0 (https://creativecommons.org/publicdomain/zero/1.0/) on openclipart-->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+ <defs id="0">
+  <linearGradient id="5">
+   <stop id="B" stop-color="#fff"/>
+   <stop id="C" offset="1" stop-color="#fff" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="6">
+   <stop id="D" stop-color="#fff" stop-opacity="0.8"/>
+   <stop id="E" offset="1" stop-color="#fff" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="7">
+   <stop id="F" stop-color="#2e3436"/>
+   <stop id="G" offset="1" stop-color="#2e3436" stop-opacity="0"/>
+  </linearGradient>
+  <radialGradient cx="46.37" cy="56.54" r="27.457" id="8" xlink:href="#7" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1,0,0,0.1371237,0,48.787205)"/>
+  <linearGradient y1="5.353" x2="0" y2="42.619" id="9" xlink:href="#6" gradientUnits="userSpaceOnUse"/>
+  <linearGradient x1="-3.655" y1="-42.14" x2="23.875" y2="28.921" id="A" xlink:href="#5" gradientUnits="userSpaceOnUse"/>
+ </defs>
+ <path d="m 23.745885,4.8366182 c -8.802495,0.2375247 -10.458576,6.7343608 -9.9886,11.6217548 0.07298,0.759003 0.419647,1.45117 0.969359,2.065153 0.05164,-0.481788 0.12211,-0.955708 0.221266,-1.422426 -0.03689,0.4142 -0.05268,0.838085 -0.05268,1.264379 0,3.935025 1.61426,7.411391 4.067087,9.461775 -0.163396,0.961944 -0.531105,1.783069 -1.074723,2.781635 L 8.6997677,32.579213 C 4.2458962,33.609558 3.9089135,39.951429 4.2112201,43.168393 43.88856,43.055802 4.1345553,43.234679 43.870593,43.0841 43.734607,39.567206 43.237712,33.315864 38.70771,32.347411 L 30.004563,30.69318 c -6.6e-4,-0.0281 0.002,-0.05618 0,-0.08429 l -0.537361,-2.960756 c 2.339084,-2.069434 3.866895,-5.456647 3.866894,-9.282654 0,-0.03864 3.11e-4,-0.07736 0,-0.115901 0.03777,0.192801 0.07538,0.383427 0.105366,0.547897 0.498845,-0.67264 0.381843,-1.824112 0.516288,-2.728952 0.699546,-4.708055 -1.951521,-11.0931996 -9.3248,-11.2319048 -0.298997,-0.00562 -0.601105,-0.00766 -0.885065,0 z" id="2" fill="#fff" />
+</svg>
