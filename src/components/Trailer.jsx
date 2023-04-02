@@ -24,15 +24,21 @@ export default function Trailer ({ data }) {
 
 	if (!trailers) return
 	const bestVideo = findBestVideo()
+	const title = data.title || data.name
 	return (
 		<>
-			<div className="Trailer" onClick={() => setPlayerTrailer(true)}>
-				<img src={`https://i.ytimg.com/vi_webp/${bestVideo.key}/mqdefault.webp`} />
+			<li className="Trailer">
+				<button onClick={() => setPlayerTrailer(true)} aria-label={`Play video for ${title}`}>
+					<img
+						src={`https://i.ytimg.com/vi_webp/${bestVideo.key}/mqdefault.webp`}
+						alt={`${title} ${bestVideo.name}`}
+					/>
+				</button>
 				<div className="footer">
-					<span>{data.name || data.title}</span>
+					<a href="#">{data.name || data.title}</a>
 					<h3>{bestVideo.name}</h3>
 				</div>
-			</div>
+			</li>
 			{playTrailer && <VideoPlayer video={bestVideo} close={() => setPlayerTrailer(false)}/>}
 		</>
 	)
@@ -42,10 +48,10 @@ function VideoPlayer ({ video, close }) {
 	const source = `https://www.youtube.com/embed/${video.key}?autoplay=1&modestbranding=1}`
 	return (
 		<div className="VideoPlayer">
-			<div className="header">
+			<header>
 				<h3>{video.name}</h3>
-				<button onClick={close}>x</button>
-			</div>
+				<button onClick={close} aria-label='Close video player'>x</button>
+			</header>
 			<iframe
 				src={source}
 				width='1227'

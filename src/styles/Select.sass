@@ -1,16 +1,17 @@
 .Select
 	background: $blue
 	border-radius: 30px
-	height: 31px
+	@extend .flex-centre
 	width: fit-content
 
 	select
+		height: 31px
 		border: none
+		border-radius: inherit
 		text-align: center
-		margin-left: 16px
+		padding-left: 18px
 		font-size: 1rem
 		font-weight: 600
-		height: 100%
 		background: $green-lg
 		color: transparent
 		-webkit-background-clip: text

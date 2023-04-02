@@ -17,15 +17,15 @@ export default function Trending () {
 
 	return (
 		<section className='Trending'>
-			<div className="header">
+			<header>
 				<h2>Trending</h2>
 				<Toggle names={['Today', 'This Week']} onToggle={handleToggle} />
-			</div>
-			<div className="cards">
+			</header>
+			<ul className="cards">
 				{data && data.results.map(movie =>
 					<Card key={movie.id} data={movie} />
 				)}
-			</div>
+			</ul>
 		</section>
 	)
 }

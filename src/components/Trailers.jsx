@@ -17,15 +17,15 @@ export default function Trailers () {
 
 	return (
 		<section className='Trailers'>
-			<div className="header">
+			<header>
 				<h2>Trailers</h2>
 				<Toggle names={['Movies', 'TV']} onToggle={handleToggle} style={'trailer'} />
-			</div>
-			<div className="videos">
+			</header>
+			<ul className="videos">
 				{data && data.results.map(movie =>
 					<Trailer key={movie.id} data={movie} />
 				)}
-			</div>
+			</ul>
 		</section>
 	)
 }

@@ -7,7 +7,7 @@ export default function Footer () {
 					<button>JOIN THE COMMUNITY</button>
 				</div>
 				<div className="links">
-					<h3>THE BASICS</h3>
+					<h2>THE BASICS</h2>
 					<ul>
 						<li><a href="#">About TMDB</a></li>
 						<li><a href="#">Contact Us</a></li>
@@ -17,7 +17,7 @@ export default function Footer () {
 					</ul>
 				</div>
 				<div className="links">
-					<h3>GET INVOLVED</h3>
+					<h2>GET INVOLVED</h2>
 					<ul>
 						<li><a href="#">Contribution Bible</a></li>
 						<li><a href="#">Add New Movie</a></li>
@@ -25,7 +25,7 @@ export default function Footer () {
 					</ul>
 				</div>
 				<div className="links">
-					<h3>COMMUNITY</h3>
+					<h2>COMMUNITY</h2>
 					<ul>
 						<li><a href="#">Guidelines</a></li>
 						<li><a href="#">Discussions</a></li>
@@ -34,7 +34,7 @@ export default function Footer () {
 					</ul>
 				</div>
 				<div className="links">
-					<h3>LEGAL</h3>
+					<h2>LEGAL</h2>
 					<ul>
 						<li><a href="#">Terms of Use</a></li>
 						<li><a href="#">API Terms of Use</a></li>

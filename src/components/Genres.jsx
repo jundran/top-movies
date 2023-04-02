@@ -21,18 +21,18 @@ export default function Genres ({ list, type, name}) {
 
 	return (
 		<section className='Genres'>
-			<div className="header mobile-columns">
+			<header className="mobile-columns">
 				<h2>{`Popular ${name} by Genre`}</h2>
 				<Select
 					list={list}
 					handleChange={handleChange}
 				/>
-			</div>
-			<div className="cards">
+			</header>
+			<ul className="cards">
 				{data && data.results.map(movie =>
 					<Card key={movie.id} data={movie} />
 				)}
-			</div>
+			</ul>
 		</section>
 	)
 }

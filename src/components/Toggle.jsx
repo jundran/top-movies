@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function Toggle ({ names, onToggle, style }) {
+export default function Toggle ({ names, onToggle, style}) {
 	const [ isLeft, setIsLeft] = useState(true)
 
 	function handleClick (e) {
@@ -10,7 +10,7 @@ export default function Toggle ({ names, onToggle, style }) {
 	}
 
 	return (
-		<div className={'Toggle ' + style}>
+		<nav className={style ? 'Toggle ' + style : 'Toggle'}>
 			<div className={isLeft ? 'fill' : 'fill right'}></div>
 			<button onClick={handleClick} id='left' className={isLeft ? 'active' : ''}>
 				{names[0]}
@@ -18,6 +18,6 @@ export default function Toggle ({ names, onToggle, style }) {
 			<button onClick={handleClick} id='right' className={!isLeft ? 'active' : ''}>
 				{names[1]}
 			</button>
-		</div>
+		</nav>
 	)
 }

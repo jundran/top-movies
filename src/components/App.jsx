@@ -11,10 +11,12 @@ export default function App () {
 		<>
 			<Header />
 			<HeaderMobile />
-			<Trending />
-			<Trailers />
-			<Genres list={movieGenres} type='movie' name='Movies'/>
-			<Genres list={tvGenres} type='tv' name='TV Shows'/>
+			<main>
+				<Trending />
+				<Trailers />
+				<Genres list={movieGenres} type='movie' name='Movies'/>
+				<Genres list={tvGenres} type='tv' name='TV Shows'/>
+			</main>
 			<Footer />
 		</>
 	)
