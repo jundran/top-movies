@@ -9,7 +9,7 @@ TOP - Javascript Final Project - TMDB
 - I built my own version of the TMDB front page  
 - Uses real data from the TMDB API  
 - Built with React
-- Mobile reponsive
+- Mobile responsive
 
 ### TMDB
 https://www.themoviedb.org/  

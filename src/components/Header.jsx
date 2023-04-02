@@ -5,7 +5,9 @@ export default function Header () {
 		<header className="Header">
 			<div className="container">
 				<nav>
-					<img className='logo' src="logo.svg" alt="TMDB logo" />
+					<a href="https://www.themoviedb.org/" target="_blank" rel="noreferrer">
+						<img className='logo' src="logo.svg" alt="TMDB logo" />
+					</a>
 					<ul>
 						<li><a href="#">Movies</a></li>
 						<li><a href="#">TV Shows</a></li>
@@ -15,11 +17,17 @@ export default function Header () {
 				</nav>
 				<nav>
 					<ul>
-						<li><img className='icon plus' src="add.svg" alt="Add media" /></li>
-						<li><span className='language'>EN</span></li>
-						<li>Login</li>
-						<li>Join TMDB</li>
-						<li><img className='icon' src="search.svg" alt="Search" /></li>
+						<li><a href="#">
+							<img className='icon plus' src="add.svg" alt="Add media" />
+						</a></li>
+						<li><a href="#">
+							<span className='language'>EN</span>
+						</a></li>
+						<li><a href="#">Login</a></li>
+						<li><a href="#">Join TMDB</a></li>
+						<li><a href="#">
+							<img className='icon' src="search.svg" alt="Search" />
+						</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -33,11 +41,15 @@ export function HeaderMobile () {
 			<div className="container">
 				<nav>
 					<div><Hamburger /></div>
-					<img className="logo" src="logo-stacked.svg" alt="TMDB logo" />
-					<div className="actions">
-						<img className='icon' src="user.svg" alt="Search" />
-						<img className='icon' src="search.svg" alt="Search" />
+					<div className='flex-centre'>
+						<a href="https://www.themoviedb.org/" target="_blank" rel="noreferrer">
+							<img className="logo-mobile" src="logo-stacked.svg" alt="TMDB logo" />
+						</a>
 					</div>
+					<ul className="actions">
+						<li><a href="#"><img className='icon' src="user.svg" alt="Search" /></a></li>
+						<li><a href="#"><img className='icon' src="search.svg" alt="Search" /></a></li>
+					</ul>
 				</nav>
 			</div>
 		</header>

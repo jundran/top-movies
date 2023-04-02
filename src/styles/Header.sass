@@ -13,7 +13,7 @@
 		align-items: center
 	.logo
 		width: 154px
-		margin-right: 16px
+		padding-right: 16px
 	ul
 		display: flex
 		align-items: center
@@ -21,14 +21,14 @@
 		list-style: none
 		padding: 0
 		margin: 0
-	li
+	a
+		display: block
 		font-weight: 600
 		padding: 8px
-		cursor: pointer
 	.icon
 		width: 20px
 	.icon.plus
-		margin-top: 6px
+		padding-top: 6px
 		width: 16px
 	.language
 		border: 1px solid #fff
@@ -42,17 +42,11 @@
 		width: 100%
 		display: grid
 		grid-template-columns: 1fr 1fr 1fr
-	img
-		cursor: pointer
-	.logo
+	.logo-mobile
 		width: 55px
-		display: block
-		margin: 0 auto
 	.actions
-		display: flex
 		justify-content: flex-end
-		img
-			padding: 8px
+		gap: 4px
 //---------------------------------------
 @media (max-width: 900px)
 	.Header

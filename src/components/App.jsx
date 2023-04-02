@@ -4,7 +4,7 @@ import Header, { HeaderMobile } from './Header'
 import Trending from './Trending'
 import Trailers from './Trailers'
 import Genres from './Genres'
-import Footer from '../Footer'
+import Footer from './Footer'
 
 export default function App () {
 	return (
