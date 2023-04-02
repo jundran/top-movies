@@ -11,7 +11,7 @@ export default function PercentCircle ({ percent }) {
 		background: deg < 180 ? '#444' : getBarColour(deg)
 	}
 	return (
-		<div className="PercentCircle" aria-label={`Rating score ${percent} percent approval`}>
+		<div className="PercentCircle">
 			<div className="outer-circle">
 				<div className="percent-bar flex-centre">
 					<div style={p1Style} className="portion"></div>
