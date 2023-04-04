@@ -30,7 +30,7 @@ export default function Trailer ({ data }) {
 			<li className="Trailer">
 				<button onClick={() => setPlayerTrailer(true)} aria-label={`Play video for ${title}`}>
 					<img
-						src={`https://i.ytimg.com/vi_webp/${bestVideo.key}/mqdefault.webp`}
+						src={`https://i.ytimg.com/vi_webp/${bestVideo.key}/maxresdefault.webp`}
 						alt={`${title} ${bestVideo.name}`}
 					/>
 				</button>
