@@ -21,21 +21,24 @@
 	transform: translate(-50%, -50%)
 	z-index: 99
 
+	$headerHeight: 48px
 	header
 		display: flex
 		justify-content: space-between
 		color: #fff
 		background: #000
-		padding: 0 8px 0 16px
+		height: $headerHeight
 		h3
 			font-weight: 400
+			margin: 0 16px
+			align-self: center
 		button
 			border: none
 			background: none
 			color: #999
 			font-size: 1.2rem
 			font-weight: 600
-			padding: 8px
+			padding: 8px 16px 8px 8px
 			height: fit-content
 
 	iframe
@@ -43,5 +46,5 @@
 		border: none
 		height: 100%
 		max-width: 100vw
-		max-height: calc(100vh - 77px)
+		max-height: calc(100vh - $headerHeight)
 		aspect-ratio: 16/9
