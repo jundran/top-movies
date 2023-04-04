@@ -23,7 +23,7 @@ export default function Genres ({ list, type, name}) {
 		<section className='Genres'>
 			<header>
 				<ListSelect
-					label={`Popular ${name} by Genre`}
+					name={name}
 					list={list}
 					handleChange={handleChange}
 				/>
@@ -37,12 +37,12 @@ export default function Genres ({ list, type, name}) {
 	)
 }
 
-function ListSelect ({ label, list, handleChange }) {
+function ListSelect ({ name, list, handleChange }) {
 	return (
 		<div className="ListSelect mobile-columns">
-			<label htmlFor='list-select'><h2>{label}</h2></label>
+			<label htmlFor={name}><h2>{`Popular ${name} by Genre`}</h2></label>
 			<div className="select-container">
-				<select id={'list-select'} onChange={e => handleChange(e.target.value)}>
+				<select id={name} onChange={e => handleChange(e.target.value)}>
 					{list.map(genre =>
 						<option key={genre.id} value={genre.id}>
 							{genre.name}
