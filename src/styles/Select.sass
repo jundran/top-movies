@@ -1,9 +1,9 @@
-.Select
-	background: $blue
-	border-radius: 30px
-	@extend .flex-centre
-	width: fit-content
-
+.ListSelect
+	display: flex
+	.select-container
+		width: fit-content
+		background: $blue
+		border-radius: 30px
 	select
 		height: 31px
 		border: none
@@ -18,3 +18,8 @@
 	option
 		color: initial
 		background: initial
+
+@media (max-width: 600px)
+	.ListSelect
+		label
+			margin-bottom: 8px
