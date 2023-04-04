@@ -16,7 +16,7 @@ export default function Trailers () {
 	}
 
 	return (
-		<section className='Trailers'>
+		<section className='Trailers' title='Trailers'>
 			<header>
 				<h2>Trailers</h2>
 				<Toggle names={['Movies', 'TV']} onToggle={handleToggle} style={'trailer'} />

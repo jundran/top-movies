@@ -20,7 +20,7 @@ export default function Genres ({ list, type, name}) {
 	useEffect(() => handleChange(list[0].id), [handleChange, list])
 
 	return (
-		<section className='Genres'>
+		<section className='Genres' title={`Popular ${name} by genre`}>
 			<header>
 				<ListSelect
 					name={name}
@@ -40,13 +40,13 @@ export default function Genres ({ list, type, name}) {
 function ListSelect ({ name, list, handleChange }) {
 	return (
 		<div className="ListSelect mobile-columns">
-			<label htmlFor={name}><h2>{`Popular ${name} by Genre`}</h2></label>
+			<label htmlFor={name}>
+				<h2>{`Popular ${name} by Genre`}</h2>
+			</label>
 			<div className="select-container">
 				<select id={name} onChange={e => handleChange(e.target.value)}>
 					{list.map(genre =>
-						<option key={genre.id} value={genre.id}>
-							{genre.name}
-						</option>
+						<option key={genre.id} value={genre.id}>{genre.name}</option>
 					)}
 				</select>
 			</div>

@@ -16,7 +16,7 @@ export default function Trending () {
 	}
 
 	return (
-		<section className='Trending'>
+		<section className='Trending' title='Trending movies and TV'>
 			<header>
 				<h2>Trending</h2>
 				<Toggle names={['Today', 'This Week']} onToggle={handleToggle} />

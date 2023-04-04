@@ -28,15 +28,25 @@ export default function Trailer ({ data }) {
 	return (
 		<>
 			<li className="Trailer">
-				<button onClick={() => setPlayerTrailer(true)} aria-label={`Play video for ${title}`}>
+				<button
+					// Allow clicking thumbnail to play trailer but hide from screen reader
+					tabIndex='-1'
+					aria-hidden="true"
+					onClick={() => setPlayerTrailer(true)}
+				>
 					<img
 						src={`https://i.ytimg.com/vi_webp/${bestVideo.key}/maxresdefault.webp`}
 						alt={`${title} ${bestVideo.name}`}
 					/>
 				</button>
-				<div className="footer">
-					<a href="#">{data.name || data.title}</a>
-					<h3>{bestVideo.name}</h3>
+				<div className="content">
+					<a href="#"><h3>{data.name || data.title}</h3></a>
+					<button
+						onClick={() => setPlayerTrailer(true)}
+						aria-label={`Play ${bestVideo.name} video for ${title}`}
+					>
+						<h4>{bestVideo.name}</h4>
+					</button>
 				</div>
 			</li>
 			{playTrailer && <VideoPlayer video={bestVideo} close={() => setPlayerTrailer(false)}/>}
@@ -47,7 +57,7 @@ export default function Trailer ({ data }) {
 function VideoPlayer ({ video, close }) {
 	const source = `https://www.youtube.com/embed/${video.key}?autoplay=1&modestbranding=1}`
 	return (
-		<div className="VideoPlayer">
+		<div aria-modal="true" className="VideoPlayer">
 			<header>
 				<h3>{video.name}</h3>
 				<button onClick={close} aria-label='Close video player'>x</button>

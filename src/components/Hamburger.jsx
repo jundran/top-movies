@@ -1,6 +1,6 @@
 export default function Hamburger () {
 	return (
-		<button>
+		<button aria-label="Menu">
 			<span className="hamburger" ></span>
 		</button>
 	)

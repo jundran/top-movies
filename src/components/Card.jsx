@@ -6,15 +6,14 @@ export default function Card ({ data }) {
 	return (
 		<li className="Card">
 			<div className="image-with-rating-container">
-				{/* Clicking image or title will navigate to movie detail page so no need to tab over both */}
-				<a href="#" tabIndex='-1'>
+				<a href="#" tabIndex='-1' aria-hidden="true">
 					<img src={'https://image.tmdb.org/t/p/w342' + data.poster_path} alt={title} />
 				</a>
 				<PercentCircle percent={data.vote_average * 10}/>
 			</div>
-			<div className="footer">
-				<a href="#"><h3 className='title'>{title}</h3></a>
-				<p className="date">{date}</p>
+			<div className="content">
+				<a href="#"><h3>{title}</h3></a>
+				<p>{date}</p>
 			</div>
 		</li>
 	)
