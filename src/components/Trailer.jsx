@@ -1,13 +1,19 @@
 
 // Thumbnail sizes: https://gist.github.com/a1ip/be4514c1fd392a8c13b05e082c4da363
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import { fetchData } from '../fetchUtils'
 import VideoPlayer from './VideoPlayer'
 
 export default function Trailer ({ data }) {
 	const [trailers, setTrailers] = useState(null)
-	const [playTrailer, setPlayTrailer] = useState(false)
+	const [videoPlayerOpen, setVideoPlayerOpen] = useState(false)
+	const ref = useRef()
+
+	useEffect(() => {
+		if (videoPlayerOpen || !ref.current) return
+		ref.current.focus()
+	}, [videoPlayerOpen])
 
 	useEffect(() => {
 		fetchData(`${data.media_type}/${data.id}/videos`)
@@ -34,7 +40,7 @@ export default function Trailer ({ data }) {
 					// Allow clicking thumbnail to play trailer but hide from screen reader
 					tabIndex='-1'
 					aria-hidden="true"
-					onClick={() => setPlayTrailer(true)}
+					onClick={() => setVideoPlayerOpen(true)}
 				>
 					<img
 						src={`https://i.ytimg.com/vi_webp/${bestVideo.key}/maxresdefault.webp`}
@@ -44,15 +50,16 @@ export default function Trailer ({ data }) {
 				<div className="content">
 					<a href="#"><h3>{data.name || data.title}</h3></a>
 					<button
-						onClick={() => setPlayTrailer(true)}
+						ref={ref}
+						onClick={() => setVideoPlayerOpen(true)}
 						aria-label={`Play ${bestVideo.name} video for ${title}`}
 					>
 						<h4>{bestVideo.name}</h4>
 					</button>
 				</div>
 			</li>
-			{playTrailer && createPortal(
-				<VideoPlayer video={bestVideo} close={() => setPlayTrailer(false)}/>,
+			{videoPlayerOpen && createPortal(
+				<VideoPlayer video={bestVideo} close={() => setVideoPlayerOpen(false)}/>,
 				document.getElementById('modal')
 			)}
 		</>
