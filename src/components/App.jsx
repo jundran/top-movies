@@ -18,6 +18,7 @@ export default function App () {
 				<Genres list={tvGenres} type='tv' name='TV Shows'/>
 			</main>
 			<Footer />
+			<div id="modal"></div>
 		</>
 	)
 }

@@ -14,12 +14,13 @@ $green-lg: linear-gradient(to right, $green-light 0%, $green-full 100%)
 @import Footer
 @import Hamburger
 
-html, body
-	overflow-x: hidden
-
 body
 	margin: 0
 	font-family: 'Source Sans Pro', FreeSans, sans-serif
+
+#root
+	// Needed to stop side scrolling on mobile
+	overflow-x: hidden
 
 section, .container
 	max-width: 1300px
@@ -42,6 +43,9 @@ a
 	display: flex
 	justify-content: center
 	align-items: center
+
+[inert]
+	opacity: 0.5
 
 @media (max-width: 600px)
 	.mobile-columns
