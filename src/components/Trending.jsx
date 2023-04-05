@@ -19,7 +19,11 @@ export default function Trending () {
 		<section className='Trending' title='Trending movies and TV'>
 			<header>
 				<h2>Trending</h2>
-				<Toggle names={['Today', 'This Week']} onToggle={handleToggle} />
+				<Toggle
+					label='Show trending movies and tv shows for '
+					names={['Today', 'This Week']}
+					onToggle={handleToggle}
+				/>
 			</header>
 			<ul className="cards">
 				{data && data.results.map(movie =>

@@ -19,7 +19,12 @@ export default function Trailers () {
 		<section className='Trailers' title='Trailers'>
 			<header>
 				<h2>Trailers</h2>
-				<Toggle names={['Movies', 'TV']} onToggle={handleToggle} style={'trailer'} />
+				<Toggle
+					label='Show trailers for '
+					names={['Movies', 'TV']}
+					onToggle={handleToggle}
+					style={'trailer'}
+				/>
 			</header>
 			<ul className="videos">
 				{data && data.results.map(movie =>
