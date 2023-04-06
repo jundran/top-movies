@@ -16,7 +16,7 @@ export default function Trailers () {
 	}
 
 	return (
-		<section className='Trailers' title='Trailers'>
+		<section className='Trailers' aria-label='Trailers'>
 			<header>
 				<h2>Trailers</h2>
 				<Toggle

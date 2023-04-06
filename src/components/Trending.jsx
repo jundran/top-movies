@@ -16,7 +16,7 @@ export default function Trending () {
 	}
 
 	return (
-		<section className='Trending' title='Trending movies and TV'>
+		<section className='Trending' aria-label='Trending movies and TV'>
 			<header>
 				<h2>Trending</h2>
 				<Toggle

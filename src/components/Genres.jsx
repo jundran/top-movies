@@ -20,7 +20,7 @@ export default function Genres ({ list, type, name}) {
 	useEffect(() => handleChange(list[0].id), [handleChange, list])
 
 	return (
-		<section className='Genres' title={`Popular ${name} by genre`}>
+		<section className='Genres' aria-label={`Popular ${name} by genre`}>
 			<header>
 				<ListSelect
 					name={name}

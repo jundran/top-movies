@@ -4,7 +4,7 @@ export default function Header () {
 	return (
 		<header className="Header">
 			<div className="container">
-				<nav title='Main links'>
+				<nav aria-label='Main links'>
 					<a href="https://www.themoviedb.org/" target="_blank" rel="noreferrer">
 						<img className='logo' src="logo.svg" alt="TMDB logo" />
 					</a>
@@ -15,7 +15,7 @@ export default function Header () {
 						<li><a href="#">More</a></li>
 					</ul>
 				</nav>
-				<nav title='User actions'>
+				<nav aria-label='User actions'>
 					<ul>
 						<li><a href="#">
 							<img className='icon plus' src="add.svg" alt="Add media" />
@@ -46,7 +46,7 @@ export function HeaderMobile () {
 							<img className="logo-mobile" src="logo-stacked.svg" alt="TMDB logo" />
 						</a>
 					</div>
-					<ul title='User actions' className="actions">
+					<ul aria-label='User actions' className="actions">
 						<li><a href="#"><img className='icon' src="user.svg" alt="Search" /></a></li>
 						<li><a href="#"><img className='icon' src="search.svg" alt="Search" /></a></li>
 					</ul>
