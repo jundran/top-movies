@@ -1,24 +1,15 @@
-import { movieGenres, tvGenres } from '../data'
 import '../styles/App.sass'
-import Header, { HeaderMobile } from './Header'
-import Trending from './Trending'
-import Trailers from './Trailers'
-import Genres from './Genres'
-import Footer from './Footer'
+import { HashRouter, Routes, Route } from 'react-router-dom'
+import HomePage from '../pages/HomePage'
+import MediaDetailPage from '../pages/MediaDetailPage'
 
 export default function App () {
 	return (
-		<>
-			<Header />
-			<HeaderMobile />
-			<main>
-				<Trending />
-				<Trailers />
-				<Genres list={movieGenres} type='movie' name='Movies'/>
-				<Genres list={tvGenres} type='tv' name='TV Shows'/>
-			</main>
-			<Footer />
-			<div id="modal"></div>
-		</>
+		<HashRouter>
+			<Routes>
+				<Route path='/' element={<HomePage />} />
+				<Route path='/media/:media_type/:id' element={<MediaDetailPage />} />
+			</Routes>
+		</HashRouter>
 	)
 }

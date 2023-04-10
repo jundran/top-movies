@@ -1,11 +1,17 @@
 $blue-bg: #181818
 
 .PercentCircle
-	width: 38px
-	height: 38px
-	position: absolute
-	bottom: -16px
-	left: 10px
+	position: relative
+	width: 68px
+	height: 68px
+	&.card
+		position: absolute
+		width: 38px
+		height: 38px
+		bottom: -16px
+		left: 10px
+	&.media
+		font-size: 170%
 
 	.outer-circle
 		width: 100%
@@ -14,8 +20,8 @@ $blue-bg: #181818
 		background: $blue-bg
 
 	.percent-bar
-		width: 34px
-		height: 34px
+		width: 90%
+		height: 90%
 		border-radius: 50%
 		position: absolute
 		top: 50%
@@ -33,10 +39,10 @@ $blue-bg: #181818
 		transform-origin: right center
 
 	.inner-circle
-		font-size: .9rem
+		font-size: 90%
 		font-weight: 700
-		width: 30px
-		height: 30px
+		width: 90%
+		height: 90%
 		background: $blue-bg
 		border-radius: 50%
 		color: #fff

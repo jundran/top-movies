@@ -25,6 +25,15 @@ function getFetchParams (path, params=[]) {
 	return { url, options }
 }
 
+export function getFormattedDate (dateField) {
+	const options = { year: 'numeric', month: 'short', day: 'numeric' }
+	const date = new Date(dateField)
+	// TMDB sends and displays date in UTC but toLocaleDateString converts to
+	// local time zone so add offset to compensate and match TMDB website
+	date.setMinutes(date.getTimezoneOffset())
+	return date.toLocaleDateString(undefined, options)
+}
+
 // eslint-disable-next-line no-unused-vars
 function getConfigurationData (path) {
 	fetchData(path)

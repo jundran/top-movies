@@ -1,4 +1,4 @@
-export default function PercentCircle ({ percent }) {
+export default function PercentCircle ({ percent, style }) {
 	const deg = percent / 100 * 360
 	const p1Deg = deg > 180 ? 180 : deg
 	const p2Deg = deg > 180 ? deg : 0
@@ -11,7 +11,7 @@ export default function PercentCircle ({ percent }) {
 		background: deg < 180 ? '#444' : getBarColour(deg)
 	}
 	return (
-		<div className="PercentCircle">
+		<div className={style ? `PercentCircle ${style}` : 'PercentCircle'}>
 			<div className="outer-circle">
 				<div className="percent-bar flex-centre">
 					<div style={p1Style} className="portion"></div>

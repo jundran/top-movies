@@ -13,6 +13,7 @@ $green-lg: linear-gradient(to right, $green-light 0%, $green-full 100%)
 @import Trailer
 @import Footer
 @import Hamburger
+@import MediaHeader
 
 body
 	margin: 0
@@ -22,7 +23,7 @@ body
 	// Needed to stop side scrolling on mobile
 	overflow-x: hidden
 
-section, .container
+.container, .Trending, .Trailers, .Genres
 	max-width: 1300px
 	margin: auto
 
@@ -46,7 +47,3 @@ a
 
 [inert]
 	opacity: 0.5
-
-@media (max-width: 600px)
-	.mobile-columns
-		flex-direction: column
