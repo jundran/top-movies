@@ -1,6 +1,20 @@
+import { useState, useEffect } from 'react'
 import Hamburger from './Hamburger'
 
 export default function Header () {
+	const [isMobile, setisMobile] = useState(matchMedia('(max-width: 900px)').matches)
+
+	useEffect(() => {
+		const mediaQueryList = matchMedia('(max-width: 900px)')
+		const handleMatch = e => setisMobile(e.matches)
+		mediaQueryList.addEventListener('change', handleMatch)
+		return () => mediaQueryList.removeEventListener('change', handleMatch)
+	}, [])
+
+	return isMobile ? <HeaderMobile /> : <HeaderDesktop />
+}
+
+function HeaderDesktop () {
 	return (
 		<header className="Header">
 			<div className="container">
@@ -35,7 +49,7 @@ export default function Header () {
 	)
 }
 
-export function HeaderMobile () {
+function HeaderMobile () {
 	return (
 		<header className="Header mobile">
 			<div className="container">

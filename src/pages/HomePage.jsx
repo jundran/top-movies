@@ -1,5 +1,5 @@
 import { movieGenres, tvGenres } from '../data'
-import Header, { HeaderMobile } from '../components/Header'
+import Header from '../components/Header'
 import Trending from '../components/Trending'
 import Trailers from '../components/Trailers'
 import Genres from '../components/Genres'
@@ -9,7 +9,6 @@ export default function HomePage () {
 	return (
 		<>
 			<Header />
-			<HeaderMobile />
 			<main>
 				<Trending />
 				<Trailers />

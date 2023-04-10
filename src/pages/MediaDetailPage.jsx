@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
-import Header, { HeaderMobile } from '../components/Header'
+import Header from '../components/Header'
 import Footer from '../components/Footer'
-import MediaDetail from '../components/MediaDetail'
+import MediaHeader from '../components/MediaHeader'
 
 export default function MediaDetailPage () {
 	const mediaType = useParams().media_type
@@ -10,9 +10,8 @@ export default function MediaDetailPage () {
 	return (
 		<>
 			<Header />
-			<HeaderMobile />
 			<main>
-				<MediaDetail mediaType={mediaType} mediaId={mediaId} />
+				<MediaHeader mediaType={mediaType} mediaId={mediaId} />
 			</main>
 			<Footer />
 			<div id="modal"></div>

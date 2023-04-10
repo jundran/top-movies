@@ -1,10 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Fragment } from 'react'
 import { fetchData, getFormattedDate } from '../fetchUtils'
-import Header, { HeaderMobile } from './Header'
-import Footer from './Footer'
 import PercentCircle from './PercentCircle'
 
-export default function MediaDetail ({ mediaType, mediaId}) {
+export default function MediaHeader ({ mediaType, mediaId}) {
 	const [data, setData] = useState(null)
 
 	useEffect(() => {
@@ -40,10 +38,10 @@ export default function MediaDetail ({ mediaType, mediaId}) {
 	function getCredits () {
 		const starsArray = data.credits.cast.slice(0, 5)
 		return starsArray.map((cast, index) => (
-			<>
-				<span>{cast.name}</span>
-				{index < starsArray.length - 1 && <span className='dot'>{'\u00A0 · \u00A0'}</span>}
-			</>
+			<Fragment key={cast.name}>
+				{cast.name}
+				{index < starsArray.length - 1 && <span className='dot' aria-hidden>{'\u00A0 · \u00A0'}</span>}
+			</Fragment>
 		))
 	}
 
@@ -76,9 +74,9 @@ export default function MediaDetail ({ mediaType, mediaId}) {
 							<div className="facts">
 								<span className='certification'>{certification}</span>
 								<span className='release-date'>{formattedDate} (CA)</span>
-								<span className='dot'>·</span>
+								<span className='dot' aria-hidden>·</span>
 								<span className='genres'> {genres}</span>
-								<span className='dot'>·</span>
+								<span className='dot' aria-hidden>·</span>
 								<span className='runtime'>{runtime}</span>
 							</div>
 						</div>
@@ -116,7 +114,7 @@ export default function MediaDetail ({ mediaType, mediaId}) {
 					</div>
 					<div className="credits">
 						<h3>Stars</h3>
-						{credits}
+						<p>{credits}</p>
 					</div>
 				</div>
 			</div>
