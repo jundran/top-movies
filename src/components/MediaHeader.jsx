@@ -23,7 +23,8 @@ export default function MediaHeader ({ mediaType, mediaId}) {
 	}
 
 	function getRunTime () {
-		const runtime = data.runtime || data.episode_run_time
+		let runtime = data.runtime || data.episode_run_time
+		if (Array.isArray(runtime)) runtime = runtime[0]
 		const hours = Math.floor(runtime / 60)
 		const minutes = runtime % 60
 		return hours ? `${hours}h ${minutes}m` : `${minutes}m`

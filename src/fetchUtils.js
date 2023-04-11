@@ -41,6 +41,6 @@ function getConfigurationData (path) {
 		.catch(error => console.warn(error))
 }
 
-// getConfigurationData('configuration')
+getConfigurationData('configuration')
 // getConfigurationData('genre/movie/list')
 // getConfigurationData('genre/tv/list')
