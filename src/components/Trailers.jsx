@@ -26,7 +26,7 @@ export default function Trailers () {
 					style={'trailer'}
 				/>
 			</header>
-			<ul className="videos">
+			<ul className="cards">
 				{data && data.results.map(movie =>
 					<Trailer key={movie.id} data={movie} />
 				)}
