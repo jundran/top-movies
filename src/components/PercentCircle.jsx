@@ -1,4 +1,7 @@
-export default function PercentCircle ({ percent, style }) {
+// For adding CSS without breaking modularity:
+// 1) Use customClass prop and add CSS with selector .PercentCircle.my-custom-class
+// 2) Attach inline style object using style prop
+export default function PercentCircle ({ percent, customClass, style}) {
 	const deg = percent / 100 * 360
 	const p1Deg = deg > 180 ? 180 : deg
 	const p2Deg = deg > 180 ? deg : 0
@@ -11,7 +14,10 @@ export default function PercentCircle ({ percent, style }) {
 		background: deg < 180 ? '#444' : getBarColour(deg)
 	}
 	return (
-		<div className={style ? `PercentCircle ${style}` : 'PercentCircle'}>
+		<div
+			style={style}
+			className={customClass ? `PercentCircle ${customClass}` : 'PercentCircle'}
+		>
 			<div className="outer-circle">
 				<div className="percent-bar flex-centre">
 					<div style={p1Style} className="portion"></div>

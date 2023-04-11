@@ -1,17 +1,19 @@
 $blue-bg: #181818
 
-.PercentCircle
-	position: relative
+.PercentCircle.card
+	position: absolute
+	bottom: -16px
+	left: 10px
+
+.PercentCircle.media
 	width: 68px
 	height: 68px
-	&.card
-		position: absolute
-		width: 38px
-		height: 38px
-		bottom: -16px
-		left: 10px
-	&.media
-		font-size: 170%
+	font-size: 170%
+
+.PercentCircle
+	position: relative
+	width: 38px
+	height: 38px
 
 	.outer-circle
 		width: 100%

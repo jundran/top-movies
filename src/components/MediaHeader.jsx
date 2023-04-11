@@ -83,7 +83,7 @@ export default function MediaHeader ({ mediaType, mediaId}) {
 					</div>
 					<ul className="actions">
 						<li className='score'>
-							<PercentCircle percent={data.vote_average * 10} style='media'/>
+							<PercentCircle percent={data.vote_average * 10} customClass='media'/>
 							<div className='text'>User<br />Score</div>
 						</li>
 						<li>

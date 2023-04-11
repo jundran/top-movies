@@ -13,7 +13,7 @@ export default function Card ({ data }) {
 				<Link to={`media/${mediaType}/${data.id}`} tabIndex='-1' aria-hidden="true">
 					<img src={'https://image.tmdb.org/t/p/w342' + data.poster_path} alt={title} />
 				</Link>
-				<PercentCircle percent={data.vote_average * 10} style='card'/>
+				<PercentCircle percent={data.vote_average * 10} customClass='card'/>
 			</div>
 			<div className="content">
 				<Link to={`media/${mediaType}/${data.id}`}><h3>{title}</h3></Link>
