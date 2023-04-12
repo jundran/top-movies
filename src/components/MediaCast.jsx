@@ -1,16 +1,5 @@
-import { useState, useEffect } from 'react'
-import { fetchData } from '../fetchUtils'
+export default function MediaCast ({ mediaType, data }) {
 
-export default function MediaCast ({ mediaType, mediaId }) {
-	const [data, setData] = useState(null)
-
-	useEffect(() => {
-		fetchData(`${mediaType}/${mediaId}/credits`)
-			.then(json => setData(json))
-			.catch(error => console.warn(error))
-	}, [mediaId, mediaType])
-
-	if (!data) return
 	return (
 		<section className='MediaCast' aria-label='Top Billed Cast'>
 			<div className="container">

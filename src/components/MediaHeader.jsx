@@ -1,17 +1,8 @@
-import { useState, useEffect, Fragment } from 'react'
-import { fetchData, getFormattedDate } from '../fetchUtils'
+import { Fragment } from 'react'
+import {  getFormattedDate } from '../fetchUtils'
 import PercentCircle from './PercentCircle'
 
-export default function MediaHeader ({ mediaType, mediaId}) {
-	const [data, setData] = useState(null)
-
-	useEffect(() => {
-		const params = [{ key: 'append_to_response', value:'content_ratings,release_dates,credits' }]
-		fetchData(`${mediaType}/${mediaId}`, params)
-			.then(json => setData(json))
-			.catch(error => console.warn(error))
-	}, [mediaId, mediaType])
-
+export default function MediaHeader ({ data }) {
 	function getCertification () {
 		if (data.content_ratings) {
 			const cert = data.content_ratings.results.find(cert => cert.iso_3166_1 ==='US')
@@ -46,7 +37,6 @@ export default function MediaHeader ({ mediaType, mediaId}) {
 		))
 	}
 
-	if (!data) return
 	const date = data.release_date || data.first_air_date
 	const title = data.title || data.name
 	const certification = getCertification()
