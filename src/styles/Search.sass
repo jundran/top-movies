@@ -1,0 +1,52 @@
+.Search
+	@extend .container
+	box-sizing: border-box
+	padding: 0 40px
+	height: 360px
+	color: #fff
+	display: flex
+	flex-direction: column
+	justify-content: center
+	background-image: linear-gradient(to right, rgba(3, 37, 65, 0.8) 0%, rgba(3, 37, 65, 0) 100%), url("https://www.themoviedb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,00192f,00baff)/VlHt27nCqOuTnuX6bku8QZapzO.jpg")
+	background-size: cover
+	background-position: -20%
+
+	h2, h3
+		margin: 0
+
+	h2
+		font-size: 3rem
+		font-weight: 700
+
+	h3
+		font-size: 2rem
+		font-weight: 600
+
+	form
+		position: relative
+		display: flex
+		margin-top: 64px
+		width: 100%
+
+	input
+		width: 100%
+		height: 26px
+		padding: 10px 20px
+		border-radius: 30px
+		border: none
+		font-size: 1.125rem
+		color: rgb(0, 0, 0, 0.5)
+
+	button
+		position: absolute
+		right: 0
+		width: 100px
+		height: 100%
+		padding: 0
+		border-radius: 30px
+		color: #fff
+		font-size: 1rem
+		font-weight: 700
+		background: cyan
+		&:hover
+			color: rgb(3, 37, 65)

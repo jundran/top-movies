@@ -1,5 +1,6 @@
 import { movieGenres, tvGenres } from '../data'
 import Header from '../components/Header'
+import Search from '../components/Search'
 import Trending from '../components/Trending'
 import Trailers from '../components/Trailers'
 import Genres from '../components/Genres'
@@ -10,6 +11,7 @@ export default function HomePage () {
 		<>
 			<Header />
 			<main>
+				<Search />
 				<Trending />
 				<Trailers />
 				<Genres list={movieGenres} type='movie' name='Movies'/>

@@ -17,10 +17,10 @@ export default function MediaCast ({ mediaType, mediaId }) {
 				<h2>{mediaType === 'movie' ? 'Top Billed Cast' : 'Series Cast'}</h2>
 				<ul className="cards">
 					{data.cast.map(castMember =>
-						<CastCard key={castMember.id} data={castMember} />
+						<CastCard key={`${castMember.id}-${castMember.cast_id}`} data={castMember} />
 					)}
 				</ul>
-				<a href="#"><p className='more'>Full Cast & Crew</p></a>
+				<a><p className='more'>Full Cast & Crew</p></a>
 				<hr />
 			</div>
 		</section>
@@ -30,11 +30,11 @@ export default function MediaCast ({ mediaType, mediaId }) {
 function CastCard ({ data }) {
 	return (
 		<li className="CastCard">
-			<a href="#">
+			<a>
 				<img src={'https://image.tmdb.org/t/p/h632' + data.profile_path} alt={data.name} />
 			</a>
 			<div className="info">
-				<a href="#"><p className="name">{data.name}</p></a>
+				<a><p className="name">{data.name}</p></a>
 				<p className="character">{data.character}</p>
 			</div>
 		</li>
