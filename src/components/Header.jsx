@@ -17,9 +17,9 @@ export default function Header () {
 function HeaderDesktop () {
 	return (
 		<header className="Header">
-			<div className="container">
+			<div className="container centred">
 				<nav aria-label='Main links'>
-					<a href="https://www.themoviedb.org/" target="_blank" rel="noreferrer">
+					<a className='logo-link' href="https://www.themoviedb.org/" target="_blank" rel="noreferrer">
 						<img className='logo' src="logo.svg" alt="TMDB logo" />
 					</a>
 					<ul>

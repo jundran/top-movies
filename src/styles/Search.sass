@@ -1,15 +1,14 @@
 .Search
-	@extend .container
+	min-height: 360px
 	box-sizing: border-box
-	padding: 0 40px
-	height: 360px
 	color: #fff
 	display: flex
 	flex-direction: column
 	justify-content: center
 	background-image: linear-gradient(to right, rgba(3, 37, 65, 0.8) 0%, rgba(3, 37, 65, 0) 100%), url("https://www.themoviedb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,00192f,00baff)/VlHt27nCqOuTnuX6bku8QZapzO.jpg")
 	background-size: cover
-	background-position: -20%
+	background-position: center
+	padding-bottom: 30px
 
 	h2, h3
 		margin: 0
@@ -50,3 +49,8 @@
 		background: cyan
 		&:hover
 			color: rgb(3, 37, 65)
+
+@media(max-width: 600px)
+	.Search
+		background-position: 25%
+

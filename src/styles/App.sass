@@ -16,21 +16,20 @@ $green-lg: linear-gradient(to right, $green-light 0%, $green-full 100%)
 @import Hamburger
 @import MediaHeader
 @import MediaCast
+@import SearchResults
 
 body
 	margin: 0
 	font-family: 'Source Sans Pro', FreeSans, sans-serif
 
-#root
-	// Needed to stop side scrolling on mobile
-	overflow-x: hidden
-
-.padding
-	padding: 30px 40px
-
-.container, .Trending, .Trailers, .Genres
+.centred
+	box-sizing: border-box
 	max-width: 1300px
 	margin: auto
+
+.container
+	padding-left: 40px
+	padding-right: 40px
 
 button, select
 	cursor: pointer

@@ -47,7 +47,7 @@ export default function MediaHeader ({ data }) {
 	const runtime = getRunTime()
 	return (
 		<section className="MediaHeader">
-			<div className='container'>
+			<div className="container centred">
 				<img
 					className='poster desktop'
 					src={`https://image.tmdb.org/t/p/w780/${data.poster_path}`}

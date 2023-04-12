@@ -1,7 +1,7 @@
 export default function Footer () {
 	return (
 		<footer className="Footer">
-			<nav className="container">
+			<nav className="centred">
 				<div className="hero">
 					<img src="logo-stacked.svg" alt="TMDB logo" />
 					<button>JOIN THE COMMUNITY</button>

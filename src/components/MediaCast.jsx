@@ -2,7 +2,7 @@ export default function MediaCast ({ mediaType, data }) {
 
 	return (
 		<section className='MediaCast' aria-label='Top Billed Cast'>
-			<div className="container">
+			<div className="container centred">
 				<h2>{mediaType === 'movie' ? 'Top Billed Cast' : 'Series Cast'}</h2>
 				<ul className="cards">
 					{data.cast.map(castMember =>

@@ -3,9 +3,11 @@ import { useNavigate } from 'react-router-dom'
 export default function Search () {
 	return (
 		<section className="Search">
-			<h2>Welcome.</h2>
-			<h3>Millions of movies, TV shows and people to discover. Explore now.</h3>
-			<SearchBar />
+			<div className="container">
+				<h2>Welcome.</h2>
+				<h3>Millions of movies, TV shows and people to discover. Explore now.</h3>
+				<SearchBar />
+			</div>
 		</section>
 	)
 }
