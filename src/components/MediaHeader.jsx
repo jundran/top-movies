@@ -15,6 +15,7 @@ export default function MediaHeader ({ data }) {
 
 	function getRunTime () {
 		let runtime = data.runtime || data.episode_run_time
+		if (!runtime) return ''
 		if (Array.isArray(runtime)) runtime = runtime[0]
 		const hours = Math.floor(runtime / 60)
 		const minutes = runtime % 60
@@ -40,8 +41,8 @@ export default function MediaHeader ({ data }) {
 	const date = data.release_date || data.first_air_date
 	const title = data.title || data.name
 	const certification = getCertification()
-	const formattedDate = getFormattedDate(date)
-	const year = date.split('-')[0]
+	const formattedDate = date ? getFormattedDate(date) : ''
+	const year = date ? date.split('-')[0] : ''
 	const genres = getGenres()
 	const credits = getCredits()
 	const runtime = getRunTime()
