@@ -19,9 +19,7 @@ export default function MediaCast ({ mediaType, data }) {
 function CastCard ({ data }) {
 	return (
 		<li className="CastCard">
-			<a>
-				<img src={'https://image.tmdb.org/t/p/h632' + data.profile_path} alt={data.name} />
-			</a>
+			<a><img src={'https://image.tmdb.org/t/p/h632' + data.profile_path} alt={data.name} /></a>
 			<div className="info">
 				<a><p className="name">{data.name}</p></a>
 				<p className="character">{data.character}</p>

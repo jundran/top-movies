@@ -1,0 +1,36 @@
+.SideList
+	min-width: 260px
+	height: fit-content
+	border: 1px solid #ddd
+	border-radius: 8px
+	overflow: hidden
+	h2
+		margin: 0 0 8px 0
+		padding: 20px
+		background: rgb(1, 180, 228)
+		color: #fff
+		font-size: 1.188rem
+		font-weight: 600
+
+	button
+		width: 100%
+		display: flex
+		justify-content: space-between
+		padding: 10px 20px
+		font-size: inherit
+		&.active
+			font-weight: 600
+		&:hover, &.active
+			background: #ddd
+			span
+				background: #eee
+
+	span
+		display: flex
+		align-items: center
+		font-size: .8rem
+		font-weight: 300
+		padding: 0 10px
+		background: #dfdfdf
+		opacity: .8
+		border-radius: 8px

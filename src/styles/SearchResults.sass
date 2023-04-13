@@ -1,2 +1,48 @@
 .SearchResults
-	// add something
+	padding: 0
+
+	h2
+		font-size: 1.188rem
+		font-weight: 600
+
+	p
+		margin: 0
+
+	img
+		display: block
+
+	.result
+		display: flex
+		margin-bottom: 32px
+		border-radius: 8px
+		overflow: hidden
+		img
+			width: 100px
+		.content
+			display: flex
+			flex-direction: column
+			justify-content: space-around
+			padding: 10px 15px
+		.date
+			color: rgb(153, 153, 153)
+		.overview, .known-for
+			display: -webkit-box
+			overflow: hidden
+			-moz-box-orient: vertical
+			-webkit-box-orient: vertical
+			-webkit-line-clamp: 2
+			&.known-for
+				-webkit-line-clamp: 1
+
+	.MediaResult
+		border: 1px solid #ddd
+
+	.PersonResult
+		img
+			width: 70px
+			height: 70px
+			object-fit: cover
+			object-position: 50% 25%
+			border-radius: 8px
+		p span
+			font-weight: 900

@@ -39,7 +39,7 @@ export default function Genres ({ list, type, name}) {
 
 function ListSelect ({ name, list, handleChange }) {
 	return (
-		<div className="ListSelect mobile-columns">
+		<div className="ListSelect">
 			<h2 id={name[0]}>{`Popular ${name} by Genre`}</h2>
 			<div className="select-container">
 				<select aria-labelledby={name[0]} onChange={e => handleChange(e.target.value)}>
