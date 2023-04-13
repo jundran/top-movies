@@ -19,7 +19,7 @@ function HeaderDesktop () {
 		<header className="Header">
 			<div className="container centred">
 				<nav aria-label='Main links'>
-					<a className='logo-link' href="https://www.themoviedb.org/" target="_blank" rel="noreferrer">
+					<a className='logo-link' href="#">
 						<img className='logo' src="logo.svg" alt="TMDB logo" />
 					</a>
 					<ul>
@@ -56,13 +56,13 @@ function HeaderMobile () {
 				<nav>
 					<div><Hamburger /></div>
 					<div className='flex-centre'>
-						<a href="https://www.themoviedb.org/" target="_blank" rel="noreferrer">
+						<a href="/">
 							<img className="logo-mobile" src="logo-stacked.svg" alt="TMDB logo" />
 						</a>
 					</div>
 					<ul aria-label='User actions' className="actions">
-						<li><a href="#"><img className='icon' src="user.svg" alt="Search" /></a></li>
-						<li><a href="#"><img className='icon' src="search.svg" alt="Search" /></a></li>
+						<li><a><img className='icon' src="user.svg" alt="Search" /></a></li>
+						<li><a><img className='icon' src="search.svg" alt="Search" /></a></li>
 					</ul>
 				</nav>
 			</div>

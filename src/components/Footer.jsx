@@ -9,7 +9,11 @@ export default function Footer () {
 				<div className="links">
 					<h2>THE BASICS</h2>
 					<ul>
-						<li><a href="#">About TMDB</a></li>
+						<li><a
+							href="https://www.themoviedb.org/"
+							target="_blank"
+							rel="noreferrer"
+						>About TMDB</a></li>
 						<li><a href="#">Contact Us</a></li>
 						<li><a href="#">Support Forums</a></li>
 						<li><a href="#">API</a></li>

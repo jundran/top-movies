@@ -26,7 +26,7 @@ function SearchBar () {
 		<form onSubmit={handleSubmit}>
 			<input
 				name='search'
-				aria-label='search'
+				aria-label='Search for a movie, TV show or person'
 				placeholder="Search for a movie, tv show, person......"
 			/>
 			<button onSubmit={handleSubmit}>Search</button>
