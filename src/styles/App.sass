@@ -4,11 +4,11 @@ $green-full: rgb(30, 213, 169)
 $green-lg: linear-gradient(to right, $green-light 0%, $green-full 100%)
 
 @import fonts
+@import HomePage
 @import Header
 @import Search
 @import Toggle
 @import ListSelect
-@import Section
 @import Card
 @import PercentCircle
 @import Trailer
@@ -30,8 +30,18 @@ body
 	margin: auto
 
 .container
-	padding-left: 40px
-	padding-right: 40px
+	padding: 30px 40px
+	@media (max-width: 500px)
+		padding: 30px 20px
+
+.cards
+	display: flex
+	padding: 20px 40px
+	gap: 20px
+	overflow-x: auto
+
+h2
+	margin: 0
 
 button, select
 	cursor: pointer
@@ -54,3 +64,7 @@ a
 
 [inert]
 	opacity: 0.5
+
+@media(max-width: 500px)
+	.cards
+		padding: 20px

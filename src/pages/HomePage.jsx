@@ -8,7 +8,7 @@ import Footer from '../components/Footer'
 
 export default function HomePage () {
 	return (
-		<>
+		<div className='HomePage'>
 			<Header />
 			<main className='centred'>
 				<Search />
@@ -19,6 +19,6 @@ export default function HomePage () {
 			</main>
 			<Footer />
 			<div id="modal"></div>
-		</>
+		</div>
 	)
 }

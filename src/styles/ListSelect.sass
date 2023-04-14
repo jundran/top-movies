@@ -2,11 +2,13 @@
 	display: flex
 	.select-container
 		display: flex
+		width: fit-content
 		background: $blue
 		border-radius: 30px
 	select
 		border: none
 		padding-left: 16px
+		min-height: 31px
 		background: $green-lg
 		color: transparent
 		font-size: 1rem
@@ -20,5 +22,5 @@
 @media (max-width: 600px)
 	.ListSelect
 		flex-direction: column
-		h2
-			margin-bottom: 8px
+		.select-container
+			margin-top: 8px

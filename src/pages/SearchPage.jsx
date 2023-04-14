@@ -31,7 +31,7 @@ export default function SearchPage () {
 	return (
 		<div className='SearchPage'>
 			<Header />
-			<main className='centred'>
+			<main className='centred container'>
 				<SideList data={data.results} onClick={handleClick}/>
 				<SearchResults data={results} mediaType={currentMediaType} />
 			</main>
