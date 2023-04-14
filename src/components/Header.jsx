@@ -31,12 +31,8 @@ function HeaderDesktop () {
 				</nav>
 				<nav aria-label='User actions'>
 					<ul>
-						<li><a href="#">
-							<img className='icon plus' src="add.svg" alt="Add media" />
-						</a></li>
-						<li><a href="#">
-							<span className='language'>EN</span>
-						</a></li>
+						<li><a href="#"><img className='icon plus' src="add.svg" alt="Add media" /></a></li>
+						<li><a href="#"><span className='language'>EN</span></a></li>
 						<li><a href="#">Login</a></li>
 						<li><a href="#">Join TMDB</a></li>
 						<li><a href="#">
@@ -61,8 +57,8 @@ function HeaderMobile () {
 						</a>
 					</div>
 					<ul aria-label='User actions' className="actions">
-						<li><a><img className='icon' src="user.svg" alt="Search" /></a></li>
-						<li><a><img className='icon' src="search.svg" alt="Search" /></a></li>
+						<li><a href="#"><img className='icon' src="user.svg" alt="Search" /></a></li>
+						<li><a href="#"><img className='icon' src="search.svg" alt="Search" /></a></li>
 					</ul>
 				</nav>
 			</div>

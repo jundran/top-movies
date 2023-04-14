@@ -33,7 +33,7 @@ export default function MediaHeader ({ data }) {
 		return starsArray.map((cast, index) => (
 			<Fragment key={cast.name}>
 				{cast.name}
-				{index < starsArray.length - 1 && <span className='dot' aria-hidden>{'\u00A0 · \u00A0'}</span>}
+				{index < starsArray.length - 1 && <span className='dot' aria-hidden="true">{'\u00A0 · \u00A0'}</span>}
 			</Fragment>
 		))
 	}
@@ -66,9 +66,9 @@ export default function MediaHeader ({ data }) {
 							<div className="facts">
 								<span className='certification'>{certification}</span>
 								<span className='release-date'>{formattedDate} (CA)</span>
-								<span className='dot' aria-hidden>·</span>
+								<span className='dot' aria-hidden="true">·</span>
 								<span className='genres'> {genres}</span>
-								<span className='dot' aria-hidden>·</span>
+								<span className='dot' aria-hidden="true">·</span>
 								<span className='runtime'>{runtime}</span>
 							</div>
 						</div>

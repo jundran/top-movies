@@ -9,7 +9,7 @@ export default function MediaCast ({ mediaType, data }) {
 						<CastCard key={`${castMember.id}-${castMember.cast_id}`} data={castMember} />
 					)}
 				</ul>
-				<a><p className='more'>Full Cast & Crew</p></a>
+				<a href="#"><p className='more'>Full Cast & Crew</p></a>
 				<hr />
 			</div>
 		</section>
@@ -19,9 +19,9 @@ export default function MediaCast ({ mediaType, data }) {
 function CastCard ({ data }) {
 	return (
 		<li className="CastCard">
-			<a><img src={'https://image.tmdb.org/t/p/h632' + data.profile_path} alt={data.name} /></a>
+			<a href="#"><img src={'https://image.tmdb.org/t/p/h632' + data.profile_path} alt={data.name} /></a>
 			<div className="info">
-				<a><p className="name">{data.name}</p></a>
+				<a href="#"><p className="name">{data.name}</p></a>
 				<p className="character">{data.character}</p>
 			</div>
 		</li>

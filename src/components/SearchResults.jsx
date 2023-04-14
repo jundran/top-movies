@@ -31,11 +31,11 @@ function MediaResult ({ data }) {
 	return (
 		<div className="MediaResult result">
 			<div className="poster">
-				<img src={image} alt={title} />
+				<a href="#" aria-hidden="true" tabIndex='-1'><img src={image} alt={title} /></a>
 			</div>
 			<div className="content">
 				<div className="top">
-					<h2>{title}</h2>
+					<a href="#"><h2>{title}</h2></a>
 					<p className="date">{getFormattedDate(date, 'long')}</p>
 				</div>
 				<p className="overview">{data.overview}</p>
@@ -61,10 +61,10 @@ function PersonResult ({ data }) {
 	return (
 		<div className="PersonResult result">
 			<div className="poster">
-				<img src={image} alt={data.name} />
+				<a href="#" aria-hidden="true" tabIndex='-1'><img src={image} alt={data.name} /></a>
 			</div>
 			<div className="content">
-				<h2>{data.name}</h2>
+				<a href="#"><h2>{data.name}</h2></a>
 				{getKnownFor()}
 			</div>
 		</div>
