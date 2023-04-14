@@ -36,12 +36,7 @@ export default function Trailer ({ data }) {
 	return (
 		<>
 			<li className="Trailer">
-				<button
-					// Allow clicking thumbnail to play trailer but hide from screen reader
-					tabIndex='-1'
-					aria-hidden="true"
-					onClick={() => setVideoPlayerOpen(true)}
-				>
+				<button tabIndex='-1' onClick={() => setVideoPlayerOpen(true)}>
 					<img
 						src={`https://i.ytimg.com/vi_webp/${bestVideo.key}/maxresdefault.webp`}
 						alt={`${title} ${bestVideo.name}`}

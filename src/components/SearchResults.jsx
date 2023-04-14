@@ -31,7 +31,7 @@ function MediaResult ({ data }) {
 	return (
 		<div className="MediaResult result">
 			<div className="poster">
-				<a href="#" aria-hidden="true" tabIndex='-1'><img src={image} alt={title} /></a>
+				<a href="#" tabIndex='-1'><img src={image} alt={title} /></a>
 			</div>
 			<div className="content">
 				<div className="top">
@@ -61,7 +61,7 @@ function PersonResult ({ data }) {
 	return (
 		<div className="PersonResult result">
 			<div className="poster">
-				<a href="#" aria-hidden="true" tabIndex='-1'><img src={image} alt={data.name} /></a>
+				<a href="#" tabIndex='-1'><img src={image} alt={data.name} /></a>
 			</div>
 			<div className="content">
 				<a href="#"><h2>{data.name}</h2></a>

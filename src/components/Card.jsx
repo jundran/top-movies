@@ -10,7 +10,7 @@ export default function Card ({ data }) {
 	return (
 		<li className="Card">
 			<div className="image-with-rating-container">
-				<Link to={`media/${mediaType}/${data.id}`} tabIndex='-1' aria-hidden="true">
+				<Link to={`media/${mediaType}/${data.id}`} tabIndex='-1'>
 					<img src={'https://image.tmdb.org/t/p/w342' + data.poster_path} alt={title} />
 				</Link>
 				<PercentCircle percent={data.vote_average * 10} customClass='card'/>
