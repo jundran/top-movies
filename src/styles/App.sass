@@ -3,6 +3,9 @@ $green-light: rgb(192, 254, 207)
 $green-full: rgb(30, 213, 169)
 $green-lg: linear-gradient(to right, $green-light 0%, $green-full 100%)
 
+$tablet: 950px
+$mobile: 700px
+
 @import fonts
 @import HomePage
 @import Header
@@ -31,8 +34,6 @@ body
 
 .container
 	padding: 30px 40px
-	@media (max-width: 500px)
-		padding: 30px 20px
 
 .cards
 	display: flex
@@ -65,6 +66,8 @@ a
 [inert]
 	opacity: 0.5
 
-@media(max-width: 500px)
+@media(max-width: $mobile)
+	.container
+		padding: 30px 20px
 	.cards
 		padding: 20px
