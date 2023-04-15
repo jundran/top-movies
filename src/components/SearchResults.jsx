@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { getFormattedDate } from '../fetchUtils'
 import list from '../mediaTypes'
 
@@ -31,11 +32,11 @@ function MediaResult ({ data }) {
 	return (
 		<div className="MediaResult result">
 			<div className="poster">
-				<a href="#" tabIndex='-1'><img src={image} alt={title} /></a>
+				<Link to={`/media/${data.media_type}/${data.id}`} tabIndex='-1'><img src={image} alt={title} /></Link>
 			</div>
 			<div className="content">
 				<div className="top">
-					<a href="#"><h2>{title}</h2></a>
+					<Link to={`/media/${data.media_type}/${data.id}`}><h2>{title}</h2></Link>
 					<p className="date">{getFormattedDate(date, 'long')}</p>
 				</div>
 				<p className="overview">{data.overview}</p>
