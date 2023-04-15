@@ -1,10 +1,14 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import list from '../mediaTypes'
 
 // Currently only handling People, Movies and TV Shows
 // Other categories are ignored and show count of 0
 export default function SideList ({ data, onClick }) {
 	const [active, setActive] = useState('movie')
+
+	useEffect(() => {
+		document.querySelector('.SideList li:first-of-type button').focus()
+	}, [])
 
 	function handleClick (mediaType) {
 		setActive(mediaType)

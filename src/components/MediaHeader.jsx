@@ -1,8 +1,13 @@
-import { Fragment } from 'react'
+import { Fragment, useEffect } from 'react'
 import {  getFormattedDate } from '../fetchUtils'
 import PercentCircle from './PercentCircle'
 
 export default function MediaHeader ({ data }) {
+
+	useEffect(() => {
+		document.querySelector('[aria-label="Add to list"]').focus()
+	}, [])
+
 	function getCertification () {
 		if (data.content_ratings) {
 			const cert = data.content_ratings.results.find(cert => cert.iso_3166_1 ==='US')
