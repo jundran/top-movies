@@ -28,5 +28,5 @@ https://gwfh.mranftl.com/fonts/source-sans-pro?subsets=latin
 ## Icons
 ### Header
 https://freesvg.org/
-### MovieDetail Action Bar
-fonts.google.com/icons
+### MovieDetail Action Bar  / Close
+https://fonts.google.com/icons

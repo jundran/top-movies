@@ -13,6 +13,10 @@ export default function Header () {
 		const handleMatch = e => setisMobile(e.matches)
 		mediaQueryList.addEventListener('change', handleMatch)
 		return () => mediaQueryList.removeEventListener('change', handleMatch)
+	}, [])
+
+	useEffect(() => {
+		setSearchBarActive(false)
 	}, [location.pathname])
 
 	function toggleSearchBar () {
@@ -50,9 +54,14 @@ function HeaderDesktop ({ searchBarActive, toggleSearchBar }) {
 						<li><a href="#"><span className='language'>EN</span></a></li>
 						<li><a href="#">Login</a></li>
 						<li><a href="#">Join TMDB</a></li>
-						<li><button onClick={toggleSearchBar}>
-							<img className='icon-search' src="search.svg" alt="Search" />
-						</button></li>
+						<li>
+							<button	className='search' onClick={toggleSearchBar}>
+								{searchBarActive ?
+									<img src="close.svg" alt="Close search bar" /> :
+									<img src="search.svg" alt="Show search bar" />
+								}
+							</button>
+						</li>
 					</ul>
 				</nav>
 			</div>

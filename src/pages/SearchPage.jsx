@@ -29,7 +29,7 @@ export default function SearchPage () {
 	if (!data || !results) return
 	return (
 		<>
-			<ToggleableSearchBar permanent defaultValue={searchQuery}/>
+			<ToggleableSearchBar defaultValue={searchQuery} permanent />
 			<main className='SearchPage centred container'>
 				<SideList data={data.results} onClick={handleClick} />
 				<SearchResults data={results} mediaType={currentMediaType} />

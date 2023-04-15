@@ -35,7 +35,7 @@ export function SearchBar () {
 	)
 }
 
-export function ToggleableSearchBar ({ active, permanent, defaultValue='' }) {
+export function ToggleableSearchBar ({ active, defaultValue='', permanent }) {
 	const [searchQuery, setSearchQuery] = useState(defaultValue)
 	const navigate = useNavigate()
 	const ref = useRef()
