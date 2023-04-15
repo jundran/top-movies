@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 export default function Search () {
@@ -36,16 +36,18 @@ export function SearchBar () {
 }
 
 export function ToggleableSearchBar ({ active, permanent, defaultValue='' }) {
+	const [searchQuery, setSearchQuery] = useState(defaultValue)
 	const navigate = useNavigate()
 	const ref = useRef()
 
-	useEffect(() => ref.current.focus(), [active])
+	useEffect(() => {
+		if (active) ref.current.focus()
+	}, [active])
 
 	function handleSubmit (e) {
 		e.preventDefault()
-		const searchQuery = e.target.search.value
 		if (!searchQuery) return
-		navigate(`search/${searchQuery}`)
+		navigate(`/search/${searchQuery}`)
 	}
 
 	function setClass () {
@@ -58,15 +60,16 @@ export function ToggleableSearchBar ({ active, permanent, defaultValue='' }) {
 	return (
 		<div className={setClass()}>
 			<form className='centred' onSubmit={handleSubmit}>
-				<img src="search.svg" aria-hidden="true" />
+				<button onSubmit={handleSubmit}><img src="search.svg" aria-hidden="true" /></button>
 				<input
-					defaultValue={defaultValue}
+					value={searchQuery}
+					onChange={e => setSearchQuery(e.target.value)}
 					ref={ref}
 					name='search'
 					aria-label='Search for a movie, TV show or person'
 					placeholder="Search for a movie, tv show, person......"
 				/>
-				<button onSubmit={handleSubmit} aria-label='close search'>x</button>
+				<button type="button" onClick={() => setSearchQuery('')} aria-label='Clear search query'>x</button>
 			</form>
 		</div>
 	)

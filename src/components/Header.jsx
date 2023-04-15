@@ -19,7 +19,7 @@ export default function Header () {
 		// Only permanent SearchBar is shown on SearchPage
 		// Cannot be toggled and clicking search icon button just moves focus to its input
 		if (location.pathname.match('/search')) {
-			return document.querySelector('.ToggleableSearchBar input').focus()
+			return document.querySelector('.ToggleableSearchBar.permanent input').focus()
 		}
 		setSearchBarActive(!searchBarActive)
 	}
