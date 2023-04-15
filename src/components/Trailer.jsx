@@ -22,17 +22,8 @@ export default function Trailer ({ data }) {
 			.catch(error => console.warn(error))
 	}, [data.id, data.media_type])
 
-	function findBestVideo () {
-		let best = trailers.results[0]
-		const typeTrailers = trailers.results.filter(video => video.type.match(/trailer/i))
-		const officialTrailers = typeTrailers.filter(video => video.official === true)
-		if (officialTrailers.length) best = officialTrailers[0]
-		else if (typeTrailers.length) best = typeTrailers[0]
-		return best
-	}
-
 	if (!trailers) return
-	const bestVideo = findBestVideo()
+	const bestVideo = findBestVideo(trailers)
 	const title = data.title || data.name
 	return (
 		<>
@@ -60,4 +51,13 @@ export default function Trailer ({ data }) {
 			)}
 		</>
 	)
+}
+
+export 	function findBestVideo (trailers) {
+	let best = trailers.results[0]
+	const typeTrailers = trailers.results.filter(video => video.type.match(/trailer/i))
+	const officialTrailers = typeTrailers.filter(video => video.official === true)
+	if (officialTrailers.length) best = officialTrailers[0]
+	else if (typeTrailers.length) best = typeTrailers[0]
+	return best
 }

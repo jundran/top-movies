@@ -1,12 +1,23 @@
-import { Fragment, useEffect } from 'react'
+import { Fragment, useEffect, useState, useRef } from 'react'
+import { createPortal } from 'react-dom'
 import {  getFormattedDate } from '../fetchUtils'
 import PercentCircle from './PercentCircle'
+import { findBestVideo } from './Trailer'
+import VideoPlayer from './VideoPlayer'
 
 export default function MediaHeader ({ data }) {
+	const [videoPlayerOpen, setVideoPlayerOpen] = useState(false)
+	const ref = useRef()
 
 	useEffect(() => {
 		document.querySelector('[aria-label="Add to list"]').focus()
 	}, [])
+
+	useEffect(() => {
+		// Put focus back on trailer button when closing video player
+		if (videoPlayerOpen) return
+		ref.current.focus()
+	}, [videoPlayerOpen])
 
 	function getCertification () {
 		if (data.content_ratings) {
@@ -52,69 +63,80 @@ export default function MediaHeader ({ data }) {
 	const credits = getCredits()
 	const runtime = getRunTime()
 	return (
-		<section className="MediaHeader">
-			<div className="container centred">
-				<img
-					className='poster desktop'
-					src={`https://image.tmdb.org/t/p/w780/${data.poster_path}`}
-					alt={title}
-				/>
-				<div className="content">
-					<div className="header">
-						<h1>{title}<span> ({year})</span></h1>
-						<div className="header-container">
-							<img
-								className='poster mobile'
-								src={`https://image.tmdb.org/t/p/w780/${data.poster_path}`}
-								alt={title}
-							/>
-							<div className="facts">
-								<span className='certification'>{certification}</span>
-								<span className='release-date'>{formattedDate} (CA)</span>
-								<span className='dot' aria-hidden="true">·</span>
-								<span className='genres'> {genres}</span>
-								<span className='dot' aria-hidden="true">·</span>
-								<span className='runtime'>{runtime}</span>
+		<>
+			<section className="MediaHeader">
+				<div className="container centred">
+					<img
+						className='poster desktop'
+						src={`https://image.tmdb.org/t/p/w780/${data.poster_path}`}
+						alt={title}
+					/>
+					<div className="content">
+						<div className="header">
+							<h1>{title}<span> ({year})</span></h1>
+							<div className="header-container">
+								<img
+									className='poster mobile'
+									src={`https://image.tmdb.org/t/p/w780/${data.poster_path}`}
+									alt={title}
+								/>
+								<div className="facts">
+									<span className='certification'>{certification}</span>
+									<span className='release-date'>{formattedDate} (CA)</span>
+									<span className='dot' aria-hidden="true">·</span>
+									<span className='genres'> {genres}</span>
+									<span className='dot' aria-hidden="true">·</span>
+									<span className='runtime'>{runtime}</span>
+								</div>
 							</div>
 						</div>
-					</div>
-					<ul className="actions">
-						<li className='score'>
-							<PercentCircle percent={data.vote_average * 10} customClass='media'/>
-							<div className='text'>User<br />Score</div>
-						</li>
-						<li>
-							<ul className='icons'>
-								<li><button aria-label='Add to list'>
-									<img src="list.svg" alt="list icon" />
-								</button></li>
-								<li><button aria-label='Add to favourites'>
-									<img src="favourite.svg" alt="favourite icon" />
-								</button></li>
-								<li><button aria-label='Save bookmark'>
-									<img src="bookmark.svg" alt="bookmark icon" />
-								</button></li>
-								<li><button aria-label='Star media'>
-									<img src="star.svg" alt="star icon" />
-								</button></li>
-							</ul>
-						</li>
-						<li className='play'><button aria-label='Play media'>
-							<img src="play.svg" alt="play icon" />
-							<span>Play Trailer</span>
-						</button></li>
-					</ul>
-					{data.tagline && <div className="tagline">{data.tagline}</div>}
-					<div className="overview">
-						<h3>Overview</h3>
-						<p>{data.overview}</p>
-					</div>
-					<div className="credits">
-						<h3>Stars</h3>
-						<p>{credits}</p>
+						<ul className="actions">
+							<li className='score'>
+								<PercentCircle percent={data.vote_average * 10} customClass='media'/>
+								<div className='text'>User<br />Score</div>
+							</li>
+							<li>
+								<ul className='icons'>
+									<li><button aria-label='Add to list'>
+										<img src="list.svg" alt="list icon" />
+									</button></li>
+									<li><button aria-label='Add to favourites'>
+										<img src="favourite.svg" alt="favourite icon" />
+									</button></li>
+									<li><button aria-label='Save bookmark'>
+										<img src="bookmark.svg" alt="bookmark icon" />
+									</button></li>
+									<li><button aria-label='Star media'>
+										<img src="star.svg" alt="star icon" />
+									</button></li>
+								</ul>
+							</li>
+							<li
+								className={'play'}
+								style={data.videos.results.length ? null : { display: 'none'} }
+							>
+								<button ref={ref} onClick={() => setVideoPlayerOpen(true)} aria-label='Play media'>
+									<img src="play.svg" alt="play icon" />
+									<span>Play Trailer</span>
+								</button>
+							</li>
+						</ul>
+						{data.tagline && <div className="tagline">{data.tagline}</div>}
+						<div className="overview">
+							<h3>Overview</h3>
+							<p>{data.overview}</p>
+						</div>
+						<div className="credits">
+							<h3>Stars</h3>
+							<p>{credits}</p>
+						</div>
 					</div>
 				</div>
-			</div>
-		</section>
+			</section>
+			{videoPlayerOpen && createPortal(
+				<VideoPlayer video={findBestVideo(data.videos)} close={() => setVideoPlayerOpen(false)}/>,
+				document.getElementById('modal')
+			)}
+		</>
 	)
 }

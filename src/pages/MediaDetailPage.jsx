@@ -10,7 +10,7 @@ export default function MediaDetailPage () {
 	const [data, setData] = useState(null)
 
 	useEffect(() => {
-		const params = [{ key: 'append_to_response', value:'content_ratings,release_dates,credits' }]
+		const params = [{ key: 'append_to_response', value:'content_ratings,release_dates,credits,videos' }]
 		fetchData(`${mediaType}/${mediaId}`, params)
 			.then(json => setData(json))
 			.catch(error => console.warn(error))
