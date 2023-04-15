@@ -17,9 +17,13 @@ export default function MediaCast ({ mediaType, data }) {
 }
 
 function CastCard ({ data }) {
+	const image = data.profile_path ?
+		'https://image.tmdb.org/t/p/h632' + data.profile_path:
+		`https://placehold.co/75x100?text=${data.name}`
+
 	return (
 		<li className="CastCard">
-			<a href="#"><img src={'https://image.tmdb.org/t/p/h632' + data.profile_path} alt={data.name} /></a>
+			<a href="#"><img src={image} alt={data.name} /></a>
 			<div className="info">
 				<a href="#"><p className="name">{data.name}</p></a>
 				<p className="character">{data.character}</p>
