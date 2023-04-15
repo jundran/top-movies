@@ -5,13 +5,10 @@ import { useLocation } from 'react-router-dom'
 
 export default function Header () {
 	const [isMobile, setisMobile] = useState(matchMedia('(max-width: 900px)').matches)
-	const [showSearchBar, setShowSearchBar] = useState(false)
+	const [searchBarActive, setSearchBarActive] = useState(false)
 	const location = useLocation()
 
 	useEffect(() => {
-		if (location.pathname.match('/search')) setShowSearchBar(true)
-		else setShowSearchBar(false)
-
 		const mediaQueryList = matchMedia('(max-width: 900px)')
 		const handleMatch = e => setisMobile(e.matches)
 		mediaQueryList.addEventListener('change', handleMatch)
@@ -19,14 +16,17 @@ export default function Header () {
 	}, [location.pathname])
 
 	function toggleSearchBar () {
-		// TODO set focus in permanent SearchBar
-		if (location.pathname.match('/search')) return
-		setShowSearchBar(!showSearchBar)
+		// Only permanent SearchBar is shown on SearchPage
+		// Cannot be toggled and clicking search icon button just moves focus to its input
+		if (location.pathname.match('/search')) {
+			return document.querySelector('.ToggleableSearchBar input').focus()
+		}
+		setSearchBarActive(!searchBarActive)
 	}
 
 	return isMobile ?
-		<HeaderMobile searchBarActive={showSearchBar} toggleSearchBar={toggleSearchBar}/> :
-		<HeaderDesktop searchBarActive={showSearchBar} toggleSearchBar={toggleSearchBar}/>
+		<HeaderMobile searchBarActive={searchBarActive} toggleSearchBar={toggleSearchBar}/> :
+		<HeaderDesktop searchBarActive={searchBarActive} toggleSearchBar={toggleSearchBar}/>
 }
 
 function HeaderDesktop ({ searchBarActive, toggleSearchBar }) {
@@ -56,7 +56,7 @@ function HeaderDesktop ({ searchBarActive, toggleSearchBar }) {
 					</ul>
 				</nav>
 			</div>
-			<ToggleableSearchBar simple active={searchBarActive}/>
+			<ToggleableSearchBar active={searchBarActive}/>
 		</header>
 	)
 }
@@ -78,7 +78,7 @@ function HeaderMobile ({ searchBarActive }) {
 					</ul>
 				</nav>
 			</div>
-			<ToggleableSearchBar simple active={searchBarActive} />
+			<ToggleableSearchBar active={searchBarActive} />
 		</header>
 	)
 }

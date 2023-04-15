@@ -11,6 +11,7 @@ export default function Trailer ({ data }) {
 	const ref = useRef()
 
 	useEffect(() => {
+		// Put focus back on trailer button when closing video player
 		if (videoPlayerOpen || !ref.current) return
 		ref.current.focus()
 	}, [videoPlayerOpen])

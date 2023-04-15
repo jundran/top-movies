@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { fetchData } from '../fetchUtils'
 import SearchResults from '../components/SearchResults'
 import SideList from '../components/SideList'
+import { ToggleableSearchBar } from '../components/Search'
 
 export default function SearchPage () {
 	const searchQuery = useParams().query
@@ -27,9 +28,12 @@ export default function SearchPage () {
 
 	if (!data || !results) return
 	return (
-		<main className='SearchPage centred container'>
-			<SideList data={data.results} onClick={handleClick}/>
-			<SearchResults data={results} mediaType={currentMediaType} />
-		</main>
+		<>
+			<ToggleableSearchBar permanent defaultValue={searchQuery}/>
+			<main className='SearchPage centred container'>
+				<SideList data={data.results} onClick={handleClick} />
+				<SearchResults data={results} mediaType={currentMediaType} />
+			</main>
+		</>
 	)
 }
