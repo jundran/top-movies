@@ -10,7 +10,7 @@
 	background-position: center
 	padding-bottom: 30px
 
-	h2, h3
+	h3
 		margin: 0
 
 	h2
@@ -21,35 +21,67 @@
 		font-size: 2rem
 		font-weight: 600
 
-	form
+	.HomePageSearchBar
 		position: relative
 		display: flex
 		margin-top: 64px
 		width: 100%
 		border-radius: 30px
+		input
+			width: 100%
+			height: 26px
+			padding: 10px 20px
+			border-radius: inherit
+			border: none
+			font-size: 1.125rem
+			color: rgb(0, 0, 0, 0.5)
+		button
+			position: absolute
+			right: 0
+			width: 100px
+			height: 100%
+			padding: 0
+			border-radius: inherit
+			color: #fff
+			font-size: 1rem
+			font-weight: 700
+			background: cyan
+			&:hover
+				color: rgb(3, 37, 65)
 
+.ToggleableSearchBar
+	display: none
+	position: absolute
+	top: 64px
+	width: 100%
+	z-index: 1
+	color: rgb(172, 172, 172)
+	background: #fff
+	border-bottom: 1px solid #dedede
+	&.active
+		display: block
+	form
+		display: flex
+		box-sizing: border-box
+		padding: 0 40px
+		background: #fff
+	img
+		width: 16px
 	input
-		width: 100%
-		height: 26px
-		padding: 10px 20px
-		border-radius: inherit
+		outline-offset: -5px
+		font-size: inherit
+		font-style: italic
+		flex-grow: 1
+		height: 32px
+		padding: 6px 12px
+		margin: 0 8px 0 8px
 		border: none
-		font-size: 1.125rem
-		color: rgb(0, 0, 0, 0.5)
-
+		color: inherit
 	button
-		position: absolute
-		right: 0
-		width: 100px
-		height: 100%
-		padding: 0
-		border-radius: inherit
-		color: #fff
-		font-size: 1rem
+		padding: 8px
+		font-size: 1.2rem
+		color: inherit
 		font-weight: 700
-		background: cyan
-		&:hover
-			color: rgb(3, 37, 65)
 
 @media(max-width: $mobile)
 	.Search

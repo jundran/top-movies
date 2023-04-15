@@ -1,8 +1,12 @@
 import { useState, useEffect } from 'react'
 import Hamburger from './Hamburger'
+import { ToggleableSearchBar } from './Search'
+import { useLocation } from 'react-router-dom'
 
 export default function Header () {
 	const [isMobile, setisMobile] = useState(matchMedia('(max-width: 900px)').matches)
+	const [showSearchBar, setShowSearchBar] = useState(false)
+	const location = useLocation()
 
 	useEffect(() => {
 		const mediaQueryList = matchMedia('(max-width: 900px)')
@@ -11,10 +15,18 @@ export default function Header () {
 		return () => mediaQueryList.removeEventListener('change', handleMatch)
 	}, [])
 
-	return isMobile ? <HeaderMobile /> : <HeaderDesktop />
+	function toggleSearchBar () {
+		// TODO set focus in permanent SearchBar
+		if (location.pathname.match('/search')) return
+		setShowSearchBar(!showSearchBar)
+	}
+
+	return isMobile ?
+		<HeaderMobile searchBarActive={showSearchBar} toggleSearchBar={toggleSearchBar}/> :
+		<HeaderDesktop searchBarActive={showSearchBar} toggleSearchBar={toggleSearchBar}/>
 }
 
-function HeaderDesktop () {
+function HeaderDesktop ({ searchBarActive, toggleSearchBar }) {
 	return (
 		<header className="Header">
 			<div className="container centred">
@@ -31,21 +43,22 @@ function HeaderDesktop () {
 				</nav>
 				<nav aria-label='User actions'>
 					<ul>
-						<li><a href="#"><img className='icon plus' src="add.svg" alt="Add media" /></a></li>
+						<li><a href="#"><img className='icon-plus' src="add.svg" alt="Add media" /></a></li>
 						<li><a href="#"><span className='language'>EN</span></a></li>
 						<li><a href="#">Login</a></li>
 						<li><a href="#">Join TMDB</a></li>
-						<li><a href="#">
-							<img className='icon' src="search.svg" alt="Search" />
-						</a></li>
+						<li><button onClick={toggleSearchBar}>
+							<img className='icon-search' src="search.svg" alt="Search" />
+						</button></li>
 					</ul>
 				</nav>
 			</div>
+			<ToggleableSearchBar simple active={searchBarActive}/>
 		</header>
 	)
 }
 
-function HeaderMobile () {
+function HeaderMobile ({ searchBarActive }) {
 	return (
 		<header className="Header mobile">
 			<div className="container">
@@ -62,6 +75,7 @@ function HeaderMobile () {
 					</ul>
 				</nav>
 			</div>
+			<ToggleableSearchBar simple active={searchBarActive} />
 		</header>
 	)
 }

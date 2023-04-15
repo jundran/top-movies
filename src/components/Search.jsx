@@ -12,7 +12,7 @@ export default function Search () {
 	)
 }
 
-function SearchBar () {
+export function SearchBar () {
 	const navigate = useNavigate()
 
 	function handleSubmit (e) {
@@ -23,7 +23,7 @@ function SearchBar () {
 	}
 
 	return (
-		<form onSubmit={handleSubmit}>
+		<form className='HomePageSearchBar centred' onSubmit={handleSubmit}>
 			<input
 				name='search'
 				aria-label='Search for a movie, TV show or person'
@@ -31,5 +31,30 @@ function SearchBar () {
 			/>
 			<button onSubmit={handleSubmit}>Search</button>
 		</form>
+	)
+}
+
+export function ToggleableSearchBar ({ active }) {
+	const navigate = useNavigate()
+
+	function handleSubmit (e) {
+		e.preventDefault()
+		const searchQuery = e.target.search.value
+		if (!searchQuery) return
+		navigate(`search/${searchQuery}`)
+	}
+
+	return (
+		<div className={active ? 'ToggleableSearchBar active' : 'ToggleableSearchBar'}>
+			<form className='centred' onSubmit={handleSubmit}>
+				<img src="search.svg" aria-hidden="true" />
+				<input
+					name='search'
+					aria-label='Search for a movie, TV show or person'
+					placeholder="Search for a movie, tv show, person......"
+				/>
+				<button onSubmit={handleSubmit} aria-label='close search'>x</button>
+			</form>
+		</div>
 	)
 }

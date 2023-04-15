@@ -15,3 +15,5 @@ export default function App () {
 		</HashRouter>
 	)
 }
+
+// TODO - Header and Footer on each page to put them around the router

@@ -5,6 +5,7 @@ import Trending from '../components/Trending'
 import Trailers from '../components/Trailers'
 import Genres from '../components/Genres'
 import Footer from '../components/Footer'
+import { SearchBar } from '../components/Search'
 
 export default function HomePage () {
 	return (
