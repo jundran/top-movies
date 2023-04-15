@@ -9,11 +9,14 @@ export default function Header () {
 	const location = useLocation()
 
 	useEffect(() => {
+		if (location.pathname.match('/search')) setShowSearchBar(true)
+		else setShowSearchBar(false)
+
 		const mediaQueryList = matchMedia('(max-width: 900px)')
 		const handleMatch = e => setisMobile(e.matches)
 		mediaQueryList.addEventListener('change', handleMatch)
 		return () => mediaQueryList.removeEventListener('change', handleMatch)
-	}, [])
+	}, [location.pathname])
 
 	function toggleSearchBar () {
 		// TODO set focus in permanent SearchBar

@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { fetchData } from '../fetchUtils'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
 import MediaHeader from '../components/MediaHeader'
 import MediaCast from '../components/MediaCast'
 
@@ -20,14 +18,9 @@ export default function MediaDetailPage () {
 
 	if (!data) return
 	return (
-		<>
-			<Header />
-			<main>
-				<MediaHeader data={data} />
-				<MediaCast mediaType={mediaType} data={ data.credits}/>
-			</main>
-			<Footer />
-			<div id="modal"></div>
-		</>
+		<main>
+			<MediaHeader data={data} />
+			<MediaCast mediaType={mediaType} data={ data.credits}/>
+		</main>
 	)
 }
