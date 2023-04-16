@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 export default function MediaCast ({ mediaType, data }) {
 
 	return (
@@ -9,7 +10,7 @@ export default function MediaCast ({ mediaType, data }) {
 						<CastCard key={`${castMember.id}-${castMember.cast_id}`} data={castMember} />
 					)}
 				</ul>
-				<a href="#"><p className='more'>Full Cast & Crew</p></a>
+				<Link to=""><p className='more'>Full Cast & Crew</p></Link>
 				<hr />
 			</div>
 		</section>
@@ -23,9 +24,9 @@ function CastCard ({ data }) {
 
 	return (
 		<li className="CastCard">
-			<a href="#"><img src={image} alt={data.name} /></a>
+			<Link to=""><img src={image} alt={data.name} /></Link>
 			<div className="info">
-				<a href="#"><p className="name">{data.name}</p></a>
+				<Link to=""><p className="name">{data.name}</p></Link>
 				<p className="character">{data.character}</p>
 			</div>
 		</li>

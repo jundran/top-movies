@@ -12,7 +12,8 @@ TOP - Javascript Final Project - TMDB
 - Mobile responsive
 - Accessible
 
-I have not implemented the entire site. It's far too big. Buttons without an onClick handler do nothing and many links will go to the top of the home page with href="#". This keeps the page accessible and tabable.
+### Functionality
+I have not implemented the entire site. It's far too big. Not all buttons and links will work.
 
 ### TMDB
 https://www.themoviedb.org/  

@@ -2,6 +2,7 @@
 // Thumbnail sizes: https://gist.github.com/a1ip/be4514c1fd392a8c13b05e082c4da363
 import { useEffect, useState, useRef } from 'react'
 import { createPortal } from 'react-dom'
+import { Link } from 'react-router-dom'
 import { fetchData } from '../fetchUtils'
 import VideoPlayer from './VideoPlayer'
 
@@ -35,7 +36,7 @@ export default function Trailer ({ data }) {
 					/>
 				</button>
 				<div className="content">
-					<a href="#"><h3>{data.name || data.title}</h3></a>
+					<Link to=""><h3>{data.name || data.title}</h3></Link>
 					<button
 						ref={ref}
 						onClick={() => setVideoPlayerOpen(true)}

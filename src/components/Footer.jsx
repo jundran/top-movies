@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function Footer () {
 	return (
 		<footer className="Footer">
@@ -14,39 +16,38 @@ export default function Footer () {
 							target="_blank"
 							rel="noreferrer"
 						>About TMDB</a></li>
-						<li><a href="#">Contact Us</a></li>
-						<li><a href="#">Support Forums</a></li>
-						<li><a href="#">API</a></li>
-						<li><a href="#">System Status</a></li>
+						<li><Link to="">Contact Us</Link></li>
+						<li><Link to="">Support Forums</Link></li>
+						<li><Link to="">API</Link></li>
+						<li><Link to="">System Status</Link></li>
 					</ul>
 				</div>
 				<div className="links">
 					<h2>GET INVOLVED</h2>
 					<ul>
-						<li><a href="#">Contribution Bible</a></li>
-						<li><a href="#">Add New Movie</a></li>
-						<li><a href="#">Add New TV Show</a></li>
+						<li><Link to="">Contribution Bible</Link></li>
+						<li><Link to="">Add New Movie</Link></li>
+						<li><Link to="">Add New TV Show</Link></li>
 					</ul>
 				</div>
 				<div className="links">
 					<h2>COMMUNITY</h2>
 					<ul>
-						<li><a href="#">Guidelines</a></li>
-						<li><a href="#">Discussions</a></li>
-						<li><a href="#">Leaderboard</a></li>
-						<li><a href="#">Twitters</a></li>
+						<li><Link to="">Guidelines</Link></li>
+						<li><Link to="">Discussions</Link></li>
+						<li><Link to="">Leaderboard</Link></li>
+						<li><Link to="">Twitters</Link></li>
 					</ul>
 				</div>
 				<div className="links">
 					<h2>LEGAL</h2>
 					<ul>
-						<li><a href="#">Terms of Use</a></li>
-						<li><a href="#">API Terms of Use</a></li>
-						<li><a href="#">Privacy Policy</a></li>
+						<li><Link to="">Terms of Use</Link></li>
+						<li><Link to="">API Terms of Use</Link></li>
+						<li><Link to="">Privacy Policy</Link></li>
 					</ul>
 				</div>
 			</nav>
 		</footer>
 	)
 }
-

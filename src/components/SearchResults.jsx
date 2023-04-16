@@ -62,10 +62,10 @@ function PersonResult ({ data }) {
 	return (
 		<div className="PersonResult result">
 			<div className="poster">
-				<a href="#" tabIndex='-1'><img src={image} alt={data.name} /></a>
+				<Link to="#" tabIndex='-1'><img src={image} alt={data.name} /></Link>
 			</div>
 			<div className="content">
-				<a href="#"><h2>{data.name}</h2></a>
+				<Link to=""><h2>{data.name}</h2></Link>
 				{getKnownFor()}
 			</div>
 		</div>
