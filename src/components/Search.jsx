@@ -47,14 +47,14 @@ export function SearchProvider ({ children }) {
 	)
 }
 
-export function ToggleableSearchBar ({ active, defaultValue, permanent }) {
+export function useSearch () {
+	return useContext(SearchContext)
+}
+
+export function ToggleableSearchBar ({ active, permanent }) {
 	const navigate = useNavigate()
 	const ref = useRef()
-	const { searchQuery, setSearchQuery } = useContext(SearchContext)
-
-	useEffect(() => {
-		if (defaultValue) setSearchQuery(defaultValue)
-	}, [defaultValue, setSearchQuery])
+	const { searchQuery, setSearchQuery } = useSearch()
 
 	useEffect(() => {
 		if (active) ref.current.focus()

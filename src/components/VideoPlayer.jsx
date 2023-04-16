@@ -42,7 +42,7 @@ export default function VideoPlayer ({ video, close }) {
 				src={source}
 				width='1104'
 				allowFullScreen
-				allow='autoplay'
+				allow='autoplay' // desktop only
 			/>
 		</div>
 	)
