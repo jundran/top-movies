@@ -1,0 +1,80 @@
+.SignUpPage
+	display: flex
+	&.container
+		margin-bottom: 40px
+	p
+		margin: 0
+
+	aside
+		width: 260px
+		border: 1px solid #ddd
+		border-radius: 8px
+		overflow: hidden
+		h3
+			font-size: 1.2rem
+			font-weight: 600
+			color: #fff
+			background: rgb(1, 180, 228)
+			padding: 20px
+			margin: 0
+		ul
+			padding: 8px 0
+		li
+			display: flex
+			padding: 10px 20px 10px 0
+			line-height: 1.4
+			img
+				align-self: flex-start
+				width: 24px
+				height: 24px
+				margin-top: -4px
+				padding: 0 4px 0 16px
+
+	main
+		padding: 0 30px
+		h2
+			margin-bottom: 10px
+		.top-text
+			margin-bottom: 16px
+		.bottom-text
+			margin: 30px 0
+		li
+			margin-bottom: 16px
+		input
+			display: block
+			box-sizing: border-box
+			width: 100%
+			font-size: 1rem
+			border: 1px solid #ddd
+			border-radius: 4px
+			padding: 6px 12px
+		button
+			padding: 6px 20px
+			font-size: 1rem
+			border-radius: 8px
+		.submit
+			background: rgb(1, 180, 228)
+			color: #fff
+			font-weight: 700
+		.cancel
+			color: rgb(1, 180, 228)
+			margin-left: 10px
+
+@media (max-width: $tablet)
+	.SignUpPage
+		flex-direction: column
+		&.container
+			padding: 0
+		p
+		gap: 20px
+		h2
+			font-size: 1.125rem
+		aside
+			width: 100%
+			border: none
+			border-radius: 0
+			border-bottom: 1px solid #ddd
+			h3
+				padding: 10px 20px
+		main
+			padding: 0 16px

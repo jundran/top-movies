@@ -6,6 +6,7 @@ import HomePage from '../pages/HomePage'
 import MediaDetailPage from '../pages/MediaDetailPage'
 import SearchPage from '../pages/SearchPage'
 import { SearchProvider } from './Search'
+import SignUpPage from '../pages/SignUpPage'
 
 export default function App () {
 	return (
@@ -16,6 +17,7 @@ export default function App () {
 					<Route path='/' element={<HomePage />} />
 					<Route path='/media/:media_type/:id' element={<MediaDetailPage />} />
 					<Route path='/search/:query' element={<SearchPage />} />
+					<Route path='/signup' element={<SignUpPage />} />
 				</Routes>
 				<Footer />
 				<div id="modal"></div>

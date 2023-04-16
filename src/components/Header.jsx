@@ -53,7 +53,7 @@ function HeaderDesktop ({ searchBarActive, toggleSearchBar }) {
 						<li><Link to=""><img className='icon-plus' src="add.svg" alt="Add media" /></Link></li>
 						<li><Link to=""><span className='language'>EN</span></Link></li>
 						<li><Link to="">Login</Link></li>
-						<li><Link to="">Join TMDB</Link></li>
+						<li><Link to="/signup">Join TMDB</Link></li>
 						<li>
 							<button	className='search' onClick={toggleSearchBar}>
 								{searchBarActive ?
