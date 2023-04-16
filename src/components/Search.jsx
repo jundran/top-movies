@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, createContext, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 export default function Search () {
@@ -35,10 +35,26 @@ export function SearchBar () {
 	)
 }
 
-export function ToggleableSearchBar ({ active, defaultValue='', permanent }) {
-	const [searchQuery, setSearchQuery] = useState(defaultValue)
+// Keep latest search query consistant between all instances of ToggleableSearchBar
+const SearchContext = createContext()
+export function SearchProvider ({ children }) {
+	const [searchQuery, setSearchQuery] = useState('')
+
+	return (
+		<SearchContext.Provider value={{ searchQuery, setSearchQuery }}>
+			{children}
+		</SearchContext.Provider>
+	)
+}
+
+export function ToggleableSearchBar ({ active, defaultValue, permanent }) {
 	const navigate = useNavigate()
 	const ref = useRef()
+	const { searchQuery, setSearchQuery } = useContext(SearchContext)
+
+	useEffect(() => {
+		if (defaultValue) setSearchQuery(defaultValue)
+	}, [defaultValue, setSearchQuery])
 
 	useEffect(() => {
 		if (active) ref.current.focus()
