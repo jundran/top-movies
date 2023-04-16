@@ -19,7 +19,7 @@ export default function MediaDetailPage () {
 	if (!data) return
 	return (
 		<main>
-			<MediaHeader data={data} />
+			<MediaHeader mediaType={mediaType} data={data} />
 			<MediaCast mediaType={mediaType} data={ data.credits}/>
 		</main>
 	)

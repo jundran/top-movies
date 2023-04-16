@@ -5,7 +5,7 @@ import PercentCircle from './PercentCircle'
 import { findBestVideo } from './Trailer'
 import VideoPlayer from './VideoPlayer'
 
-export default function MediaHeader ({ data }) {
+export default function MediaHeader ({ data, mediaType }) {
 	const [videoPlayerOpen, setVideoPlayerOpen] = useState(false)
 	const ref = useRef()
 
@@ -18,6 +18,10 @@ export default function MediaHeader ({ data }) {
 		if (videoPlayerOpen) return
 		ref.current.focus()
 	}, [videoPlayerOpen])
+
+	function toggleFavourite () {
+		console.log(`Adding or removing type ${mediaType} ${data.title || data.name} with id ${data.id} to favourites`)
+	}
 
 	function getCertification () {
 		if (data.content_ratings) {
@@ -103,7 +107,7 @@ export default function MediaHeader ({ data }) {
 									<li><button aria-label='Add to list'>
 										<img src="list.svg" alt="list icon" />
 									</button></li>
-									<li><button aria-label='Add to favourites'>
+									<li><button onClick={toggleFavourite} aria-label='Add to favourites'>
 										<img src="favourite.svg" alt="favourite icon" />
 									</button></li>
 									<li><button aria-label='Save bookmark'>

@@ -50,8 +50,8 @@ function HeaderDesktop ({ searchBarActive, toggleSearchBar }) {
 				</nav>
 				<nav aria-label='User actions'>
 					<ul>
-						<li><Link to=""><img className='icon-plus' src="add.svg" alt="Add media" /></Link></li>
-						<li><Link to=""><span className='language'>EN</span></Link></li>
+						<li><Link to="/favourites"><img className='icon-plus' src="add.svg" alt="Add media" /></Link></li>
+						<li><Link to="/profile"><span className='language'>EN</span></Link></li>
 						<li><Link to="/login">Login</Link></li>
 						<li><Link to="/signup">Join TMDB</Link></li>
 						<li>

@@ -69,6 +69,11 @@
 		p
 			margin-bottom: 16px
 
+	&.Profile
+		li
+			display: grid
+			grid-template-columns: 200px 1fr
+
 @media (max-width: $tablet)
 	.Form
 		flex-direction: column
@@ -88,6 +93,6 @@
 		main
 			padding: 0 16px
 
-		&.Login
+		&.Login, &.Profile
 			main
 				padding: 30px 16px
