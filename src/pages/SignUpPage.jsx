@@ -7,7 +7,7 @@ export default function SignUpPage () {
 	}
 
 	return (
-		<section className="SignUpPage container centred">
+		<section className="Form container centred">
 			<aside>
 				<h3>Benefits of being a member</h3>
 				<ul>
@@ -65,7 +65,7 @@ export default function SignUpPage () {
 					</ul>
 					<p className='bottom-text'>By clicking the &quot;Sign up&quot; button below, I certify that I have read and agree to the TMDB terms of use and privacy policy.</p>
 					<button className='submit'>Sign Up</button>
-					<Link to="/" className='cancel'>Cancel</Link>
+					<Link to="/" className='secondary-action'>Cancel</Link>
 				</form>
 			</main>
 		</section>
