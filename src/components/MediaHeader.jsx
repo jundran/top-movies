@@ -31,8 +31,8 @@ export default function MediaHeader ({ data }) {
 
 	function getRunTime () {
 		let runtime = data.runtime || data.episode_run_time
-		if (!runtime) return ''
 		if (Array.isArray(runtime)) runtime = runtime[0]
+		if (!runtime) return ''
 		const hours = Math.floor(runtime / 60)
 		const minutes = runtime % 60
 		return hours ? `${hours}h ${minutes}m` : `${minutes}m`
@@ -62,13 +62,16 @@ export default function MediaHeader ({ data }) {
 	const genres = getGenres()
 	const credits = getCredits()
 	const runtime = getRunTime()
+	const image = data.poster_path ?
+		`https://image.tmdb.org/t/p/w780/${data.poster_path}` :
+		`https://placehold.co/300x450?text=${title}`
 	return (
 		<>
 			<section className="MediaHeader">
 				<div className="container centred">
 					<img
 						className='poster desktop'
-						src={`https://image.tmdb.org/t/p/w780/${data.poster_path}`}
+						src={image}
 						alt={title}
 					/>
 					<div className="content">
@@ -77,7 +80,7 @@ export default function MediaHeader ({ data }) {
 							<div className="header-container">
 								<img
 									className='poster mobile'
-									src={`https://image.tmdb.org/t/p/w780/${data.poster_path}`}
+									src={image}
 									alt={title}
 								/>
 								<div className="facts">
