@@ -12,31 +12,31 @@ export default function SignUpPage () {
 				<h3>Benefits of being a member</h3>
 				<ul>
 					<li>
-						<img src="/checkmark.svg" alt="checkmark" aria-hidden="true" />
+						<img src="checkmark.svg" alt="checkmark" aria-hidden="true" />
 						<p>Find something to watch on your subscribed streaming services</p>
 					</li>
 					<li>
-						<img src="/checkmark.svg" alt="checkmark" aria-hidden="true" />
+						<img src="checkmark.svg" alt="checkmark" aria-hidden="true" />
 						<p>Log the movies and TV shows you have watched</p>
 					</li>
 					<li>
-						<img src="/checkmark.svg" alt="checkmark" aria-hidden="true" />
+						<img src="checkmark.svg" alt="checkmark" aria-hidden="true" />
 						<p>Keep track of your favourite movies and TV shows and get recommendations from them</p>
 					</li>
 					<li>
-						<img src="/checkmark.svg" alt="checkmark" aria-hidden="true" />
+						<img src="checkmark.svg" alt="checkmark" aria-hidden="true" />
 						<p>Build and maintain a personal watchlist</p>
 					</li>
 					<li>
-						<img src="/checkmark.svg" alt="checkmark" aria-hidden="true" />
+						<img src="checkmark.svg" alt="checkmark" aria-hidden="true" />
 						<p>Build custom mixed lists (movies and TV)</p>
 					</li>
 					<li>
-						<img src="/checkmark.svg" alt="checkmark" aria-hidden="true" />
+						<img src="checkmark.svg" alt="checkmark" aria-hidden="true" />
 						<p>Take part in movie and TV discussions</p>
 					</li>
 					<li>
-						<img src="/checkmark.svg" alt="checkmark" aria-hidden="true" />
+						<img src="checkmark.svg" alt="checkmark" aria-hidden="true" />
 						<p>Contribute to, and improve the information in our database</p>
 					</li>
 				</ul>
