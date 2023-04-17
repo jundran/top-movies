@@ -10,6 +10,7 @@ import SignUpPage from '../pages/SignUpPage'
 import LoginPage from '../pages/LoginPage'
 import ProfilePage from '../pages/ProfilePage'
 import FavouritesPage from '../pages/FavouritesPage'
+import NotFound from '../pages/404'
 
 export default function App () {
 	return (
@@ -24,6 +25,7 @@ export default function App () {
 					<Route path='/login' element={<LoginPage />} />
 					<Route path='/profile' element={<ProfilePage />} />
 					<Route path='/favourites' element={<FavouritesPage />} />
+					<Route path='/*' element={<NotFound />} />
 				</Routes>
 				<Footer />
 				<div id="modal"></div>
