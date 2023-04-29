@@ -105,16 +105,16 @@ export default function MediaHeader ({ data, mediaType }) {
 							<li>
 								<ul className='icons'>
 									<li><button aria-label='Add to list'>
-										<img src="list.svg" alt="list icon" />
+										<img src="icons/list.svg" alt="list icon" />
 									</button></li>
 									<li><button onClick={toggleFavourite} aria-label='Add to favourites'>
-										<img src="favourite.svg" alt="favourite icon" />
+										<img src="icons/favourite.svg" alt="favourite icon" />
 									</button></li>
 									<li><button aria-label='Save bookmark'>
-										<img src="bookmark.svg" alt="bookmark icon" />
+										<img src="icons/bookmark.svg" alt="bookmark icon" />
 									</button></li>
 									<li><button aria-label='Star media'>
-										<img src="star.svg" alt="star icon" />
+										<img src="icons/star.svg" alt="star icon" />
 									</button></li>
 								</ul>
 							</li>
@@ -123,7 +123,7 @@ export default function MediaHeader ({ data, mediaType }) {
 								style={data.videos.results.length ? null : { display: 'none'} }
 							>
 								<button ref={ref} onClick={() => setVideoPlayerOpen(true)} aria-label='Play media'>
-									<img src="play.svg" alt="play icon" />
+									<img src="icons/play.svg" alt="play icon" />
 									<span>Play Trailer</span>
 								</button>
 							</li>

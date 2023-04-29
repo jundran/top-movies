@@ -76,7 +76,7 @@ export function ToggleableSearchBar ({ active, permanent }) {
 	return (
 		<div className={setClass()}>
 			<form className='centred' onSubmit={handleSubmit}>
-				<button onSubmit={handleSubmit}><img src="search.svg" aria-hidden="true" /></button>
+				<button onSubmit={handleSubmit}><img src="icons/search.svg" aria-hidden="true" /></button>
 				<input
 					value={searchQuery}
 					onChange={e => setSearchQuery(e.target.value)}

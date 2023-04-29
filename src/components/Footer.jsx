@@ -5,7 +5,7 @@ export default function Footer () {
 		<footer className="Footer">
 			<nav className="centred">
 				<div className="hero">
-					<img src="logo-stacked.svg" alt="TMDB logo" />
+					<img src="icons/logo-stacked.svg" alt="TMDB logo" />
 					<button>JOIN THE COMMUNITY</button>
 				</div>
 				<div className="links">

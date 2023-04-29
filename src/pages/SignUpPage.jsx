@@ -11,34 +11,13 @@ export default function SignUpPage () {
 			<aside>
 				<h3>Benefits of being a member</h3>
 				<ul>
-					<li>
-						<img src="checkmark.svg" alt="checkmark" aria-hidden="true" />
-						<p>Find something to watch on your subscribed streaming services</p>
-					</li>
-					<li>
-						<img src="checkmark.svg" alt="checkmark" aria-hidden="true" />
-						<p>Log the movies and TV shows you have watched</p>
-					</li>
-					<li>
-						<img src="checkmark.svg" alt="checkmark" aria-hidden="true" />
-						<p>Keep track of your favourite movies and TV shows and get recommendations from them</p>
-					</li>
-					<li>
-						<img src="checkmark.svg" alt="checkmark" aria-hidden="true" />
-						<p>Build and maintain a personal watchlist</p>
-					</li>
-					<li>
-						<img src="checkmark.svg" alt="checkmark" aria-hidden="true" />
-						<p>Build custom mixed lists (movies and TV)</p>
-					</li>
-					<li>
-						<img src="checkmark.svg" alt="checkmark" aria-hidden="true" />
-						<p>Take part in movie and TV discussions</p>
-					</li>
-					<li>
-						<img src="checkmark.svg" alt="checkmark" aria-hidden="true" />
-						<p>Contribute to, and improve the information in our database</p>
-					</li>
+					<Benefit>Find something to watch on your subscribed streaming services</Benefit>
+					<Benefit>Log the movies and TV shows you have watched</Benefit>
+					<Benefit>Keep track of your favourite movies and TV shows and get recommendation from them</Benefit>
+					<Benefit>Build and maintain a personal watchlist</Benefit>
+					<Benefit>Build custom mixed lists (movies and TV)</Benefit>
+					<Benefit>Take part in movie and TV discussions</Benefit>
+					<Benefit>Contribute to, and improve the information in our database</Benefit>
 				</ul>
 			</aside>
 			<main>
@@ -69,5 +48,14 @@ export default function SignUpPage () {
 				</form>
 			</main>
 		</section>
+	)
+}
+
+function Benefit ({ children }) {
+	return (
+		<li>
+			<img src="icons/checkmark.svg" alt="checkmark" aria-hidden="true" />
+			<p>{children}</p>
+		</li>
 	)
 }

@@ -39,7 +39,7 @@ function HeaderDesktop ({ searchBarActive, toggleSearchBar }) {
 			<div className="container centred">
 				<nav aria-label='Main links'>
 					<Link to="" className='logo-link'>
-						<img className='logo' src="logo.svg" alt="TMDB logo" />
+						<img className='logo' src="icons/logo.svg" alt="TMDB logo" />
 					</Link>
 					<ul>
 						<li><Link to="">Movies</Link></li>
@@ -50,15 +50,15 @@ function HeaderDesktop ({ searchBarActive, toggleSearchBar }) {
 				</nav>
 				<nav aria-label='User actions'>
 					<ul>
-						<li><Link to="/favourites"><img className='icon-plus' src="add.svg" alt="Add media" /></Link></li>
+						<li><Link to="/favourites"><img className='icon-plus' src="icons/add.svg" alt="Add media" /></Link></li>
 						<li><Link to="/profile"><span className='language'>EN</span></Link></li>
 						<li><Link to="/login">Login</Link></li>
 						<li><Link to="/signup">Join TMDB</Link></li>
 						<li>
 							<button	className='search' onClick={toggleSearchBar}>
 								{searchBarActive ?
-									<img src="close.svg" alt="Close search bar" /> :
-									<img src="search.svg" alt="Show search bar" />
+									<img src="icons/close.svg" alt="Close search bar" /> :
+									<img src="icons/search.svg" alt="Show search bar" />
 								}
 							</button>
 						</li>
@@ -78,16 +78,16 @@ function HeaderMobile ({ searchBarActive, toggleSearchBar }) {
 					<div><Hamburger /></div>
 					<div className='flex-centre'>
 						<Link to="/">
-							<img className="logo-mobile" src="logo-stacked.svg" alt="TMDB logo" />
+							<img className="logo-mobile" src="icons/logo-stacked.svg" alt="TMDB logo" />
 						</Link>
 					</div>
 					<ul aria-label='User actions' className="actions">
-						<li><Link to=""><img className='icon' src="user.svg" alt="Search" /></Link></li>
+						<li><Link to=""><img className='icon' src="icons/user.svg" alt="Search" /></Link></li>
 						<li>
 							<button	className='search' onClick={toggleSearchBar}>
 								{searchBarActive ?
-									<img src="close.svg" alt="Close search bar" /> :
-									<img src="search.svg" alt="Show search bar" />
+									<img src="icons/close.svg" alt="Close search bar" /> :
+									<img src="icons/search.svg" alt="Show search bar" />
 								}
 							</button>
 						</li>
