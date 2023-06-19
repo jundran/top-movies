@@ -3,6 +3,7 @@ import { fetchData } from '../fetchUtils'
 import Toggle from './Toggle'
 import Trailer from './Trailer'
 
+// This is the Trailers section on the home page which fetches the top 20 movies or TV shows for the week. For each it will render the Trailer component which uses the movie data.
 export default function Trailers () {
 	const [data, setData] = useState(null)
 
@@ -11,7 +12,7 @@ export default function Trailers () {
 	function handleToggle (isLeft) {
 		const media = isLeft ? 'movie' : 'tv'
 		fetchData(`trending/${media}/week`)
-			.then(json => setData(json))
+			.then(json => setData(json.results))
 			.catch(error => console.warn(error))
 	}
 
@@ -27,7 +28,7 @@ export default function Trailers () {
 				/>
 			</header>
 			<ul className="cards">
-				{data && data.results.map(movie =>
+				{data && data.map(movie =>
 					<Trailer key={movie.id} data={movie} />
 				)}
 			</ul>

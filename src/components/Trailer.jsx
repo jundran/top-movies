@@ -6,8 +6,9 @@ import { Link } from 'react-router-dom'
 import { fetchData } from '../fetchUtils'
 import VideoPlayer from './VideoPlayer'
 
+// Return a Trailer component using movie or TV data. This will fetch available trailers (and sometimes other videos) for the given media. It will choose one trailer using findBestVideo(). It renders the video thumbnail inside a button that opens the VideoPlayer modal when clicked.
 export default function Trailer ({ data }) {
-	const [trailers, setTrailers] = useState(null)
+	const [trailers, setTrailers] = useState([])
 	const [videoPlayerOpen, setVideoPlayerOpen] = useState(false)
 	const ref = useRef()
 
@@ -19,11 +20,11 @@ export default function Trailer ({ data }) {
 
 	useEffect(() => {
 		fetchData(`${data.media_type}/${data.id}/videos`)
-			.then(json => setTrailers(json))
+			.then(json => setTrailers(json.results))
 			.catch(error => console.warn(error))
 	}, [data.id, data.media_type])
 
-	if (!trailers) return
+	if (!trailers.length) return null
 	const bestVideo = findBestVideo(trailers)
 	const title = data.title || data.name
 	return (
@@ -55,8 +56,8 @@ export default function Trailer ({ data }) {
 }
 
 export 	function findBestVideo (trailers) {
-	let best = trailers.results[0]
-	const typeTrailers = trailers.results.filter(video => video.type.match(/trailer/i))
+	let best = trailers[0]
+	const typeTrailers = trailers.filter(video => video.type.match(/trailer/i))
 	const officialTrailers = typeTrailers.filter(video => video.official === true)
 	if (officialTrailers.length) best = officialTrailers[0]
 	else if (typeTrailers.length) best = typeTrailers[0]
