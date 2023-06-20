@@ -7,7 +7,7 @@ export default function LoginPage () {
 	}
 
 	return (
-		<section className="Form Login container centred">
+		<section className="Form flex-expand container centred">
 			<main>
 				<h2>Login to your account</h2>
 				<p>In order to use the editing and rating capabilities of TMDB, as well as get personal recommendations you will need to login to your account. If you do not have an account, registering for an account is free and simple. <Link to="/signup">Click here</Link> to get started.</p>
