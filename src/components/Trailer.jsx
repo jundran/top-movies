@@ -55,7 +55,7 @@ export default function Trailer ({ data }) {
 	)
 }
 
-export 	function findBestVideo (trailers) {
+export function findBestVideo (trailers) {
 	let best = trailers[0]
 	const typeTrailers = trailers.filter(video => video.type.match(/trailer/i))
 	const officialTrailers = typeTrailers.filter(video => video.official === true)

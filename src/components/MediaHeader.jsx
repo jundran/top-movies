@@ -141,7 +141,7 @@ export default function MediaHeader ({ data, mediaType }) {
 				</div>
 			</section>
 			{videoPlayerOpen && createPortal(
-				<VideoPlayer video={findBestVideo(data.videos)} close={() => setVideoPlayerOpen(false)}/>,
+				<VideoPlayer video={findBestVideo(data.videos.results)} close={() => setVideoPlayerOpen(false)}/>,
 				document.getElementById('modal')
 			)}
 		</>
